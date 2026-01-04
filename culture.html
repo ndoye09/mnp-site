@@ -54,14 +54,17 @@
         .btn-back { display: inline-block; color: var(--primary); text-decoration: none; font-weight: 600; margin-bottom: 30px; transition: all 0.3s; }
         .btn-back:hover { color: var(--accent); }
 
-        footer { background: var(--dark); color: white; padding: 40px 0 20px; margin-top: 60px; border-top: 4px solid var(--primary); }
-        footer h5 { font-weight: 700; margin-bottom: 20px; color: var(--accent); }
-        footer a { color: rgba(255,255,255,0.7); text-decoration: none; transition: all 0.3s; }
-        footer a:hover { color: white; }
-        footer ul { list-style: none; }
+        footer { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 50px 0 20px; margin-top: 50px; }
+        footer h5 { font-weight: 600; margin-bottom: 20px; color: white; }
+        footer a { color: rgba(255,255,255,0.9); text-decoration: none; transition: all 0.3s ease; }
+        footer a:hover { color: var(--accent); }
+        footer ul { list-style: none; padding: 0; }
         footer ul li { margin-bottom: 10px; }
         footer ul li::before { content: '▸ '; color: var(--accent); margin-right: 8px; font-weight: bold; }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; color: rgba(255,255,255,0.7); }
+        .social-links { display: flex; gap: 15px; margin-top: 15px; }
+        .social-links a { display: inline-flex; width: 40px; height: 40px; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); border-radius: 50%; transition: all 0.3s ease; }
+        .social-links a:hover { background: var(--accent); transform: translateY(-3px); }
+        footer .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; margin-top: 30px; text-align: center; }
     </style>
 </head>
 <body>

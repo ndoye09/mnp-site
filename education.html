@@ -29,9 +29,17 @@
         .placeholder-box { background: #f0f0f0; border: 2px dashed #ccc; padding: 40px; border-radius: 10px; text-align: center; color: #999; margin-bottom: 30px; }
         .btn-back { display: inline-block; margin-bottom: 30px; color: var(--primary-color); text-decoration: none; font-weight: 600; transition: all 0.3s ease; }
         .btn-back:hover { color: var(--accent-color); }
-        footer { background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; padding: 30px 0; margin-top: 50px; text-align: center; }
+        footer { background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; padding: 50px 0 20px; margin-top: 50px; }
+        footer h5 { font-weight: 600; margin-bottom: 20px; color: white; }
         footer a { color: rgba(255,255,255,0.9); text-decoration: none; transition: all 0.3s ease; }
         footer a:hover { color: var(--accent-color); }
+        footer ul { list-style: none; padding: 0; }
+        footer ul li { margin-bottom: 10px; }
+        footer ul li::before { content: '▸ '; color: var(--accent-color); margin-right: 8px; font-weight: bold; }
+        .social-links { display: flex; gap: 15px; margin-top: 15px; }
+        .social-links a { display: inline-flex; width: 40px; height: 40px; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); border-radius: 50%; transition: all 0.3s ease; }
+        .social-links a:hover { background: var(--accent-color); transform: translateY(-3px); }
+        footer .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; margin-top: 30px; text-align: center; }
     </style>
 </head>
 <body>

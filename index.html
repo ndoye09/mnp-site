@@ -443,7 +443,8 @@
                     <li class="nav-item"><a class="nav-link active" href="#accueil">Accueil</a></li>
                     <li class="nav-item"><a class="nav-link" href="#qui-sommes-nous">Qui sommes-nous</a></li>
                     <li class="nav-item"><a class="nav-link" href="#activites">Activités</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#boutique">Boutique</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#bureau">Bureau</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#boutique">Boutique</a></li>
                     <li class="nav-item"><a class="nav-link btn btn-primary-custom text-white ms-2" href="devenir-membre.html">Adhérer</a></li>
                 </ul>
             </div>
@@ -658,53 +659,100 @@
     </section>
 
     <!-- Bureau -->
-    <section style="background: white; padding: 80px 0;">
+    <section id="bureau" style="background: white; padding: 80px 0;">
         <div class="container">
             <h2 class="section-title text-center mb-5">Notre Bureau Exécutif</h2>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                            <div style="padding: 15px; border-left: 5px solid var(--secondary);">
-                                <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Président</h5>
-                                <p style="margin: 0; color: #666;">Youssou Ndoye</p>
+            <div class="row mb-5">
+                <div class="col-lg-10 mx-auto">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+                        <!-- Président -->
+                        <div style="text-align: center;">
+                            <div style="width: 150px; height: 150px; margin: 0 auto 15px; background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 50px;">
+                                <i class="fas fa-user"></i>
                             </div>
-                            <div style="padding: 15px; border-left: 5px solid var(--secondary);">
-                                <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Vice-président</h5>
-                                <p style="margin: 0; color: #666;">Saliou Ndoye</p>
+                            <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Youssou Ndoye</h5>
+                            <p style="color: #666; margin: 0; font-weight: 500;">Président</p>
+                        </div>
+
+                        <!-- Vice-président -->
+                        <div style="text-align: center;">
+                            <div style="width: 150px; height: 150px; margin: 0 auto 15px; background: linear-gradient(135deg, #1e40af 0%, #0ea5e9 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 50px;">
+                                <i class="fas fa-user"></i>
                             </div>
-                            <div style="padding: 15px; border-left: 5px solid var(--secondary);">
-                                <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Secrétaire Général</h5>
-                                <p style="margin: 0; color: #666;">Awa Cheikh Ndoye</p>
+                            <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Saliou Ndoye</h5>
+                            <p style="color: #666; margin: 0; font-weight: 500;">Vice-président</p>
+                        </div>
+
+                        <!-- Secrétaire Général -->
+                        <div style="text-align: center;">
+                            <div style="width: 150px; height: 150px; margin: 0 auto 15px; background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 50px;">
+                                <i class="fas fa-user"></i>
                             </div>
-                            <div style="padding: 15px; border-left: 5px solid var(--secondary);">
-                                <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Trésorier</h5>
-                                <p style="margin: 0; color: #666;">Mamadou Lamine Seck</p>
+                            <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Awa Cheikh Ndoye</h5>
+                            <p style="color: #666; margin: 0; font-weight: 500;">Secrétaire Général</p>
+                        </div>
+
+                        <!-- Trésorier -->
+                        <div style="text-align: center;">
+                            <div style="width: 150px; height: 150px; margin: 0 auto 15px; background: linear-gradient(135deg, #1e40af 0%, #0ea5e9 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 50px;">
+                                <i class="fas fa-user"></i>
                             </div>
-                            <div style="padding: 15px; border-left: 5px solid var(--secondary);">
-                                <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Commissaire aux Comptes</h5>
-                                <p style="margin: 0; color: #666;">Khadija Ndoye</p>
+                            <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Mamadou Lamine Seck</h5>
+                            <p style="color: #666; margin: 0; font-weight: 500;">Trésorier</p>
+                        </div>
+
+                        <!-- Commissaire aux Comptes -->
+                        <div style="text-align: center;">
+                            <div style="width: 150px; height: 150px; margin: 0 auto 15px; background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 50px;">
+                                <i class="fas fa-user"></i>
                             </div>
-                            <div style="padding: 15px; border-left: 5px solid var(--secondary);">
-                                <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Relation Extérieures</h5>
-                                <p style="margin: 0; color: #666;">Makhtar Seck</p>
+                            <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Khadija Ndoye</h5>
+                            <p style="color: #666; margin: 0; font-weight: 500;">Commissaire aux Comptes</p>
+                        </div>
+
+                        <!-- Relation Extérieures -->
+                        <div style="text-align: center;">
+                            <div style="width: 150px; height: 150px; margin: 0 auto 15px; background: linear-gradient(135deg, #1e40af 0%, #0ea5e9 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 50px;">
+                                <i class="fas fa-user"></i>
                             </div>
-                            <div style="padding: 15px; border-left: 5px solid var(--secondary);">
-                                <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Communication</h5>
-                                <p style="margin: 0; color: #666;">Maguette Pouye</p>
+                            <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Makhtar Seck</h5>
+                            <p style="color: #666; margin: 0; font-weight: 500;">Relation Extérieures</p>
+                        </div>
+
+                        <!-- Communication -->
+                        <div style="text-align: center;">
+                            <div style="width: 150px; height: 150px; margin: 0 auto 15px; background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 50px;">
+                                <i class="fas fa-user"></i>
                             </div>
-                            <div style="padding: 15px; border-left: 5px solid var(--secondary);">
-                                <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Pres. Commission Santé</h5>
-                                <p style="margin: 0; color: #666;">Mbaye Babacar Fall</p>
+                            <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Maguette Pouye</h5>
+                            <p style="color: #666; margin: 0; font-weight: 500;">Communication</p>
+                        </div>
+
+                        <!-- Pres. Commission Santé -->
+                        <div style="text-align: center;">
+                            <div style="width: 150px; height: 150px; margin: 0 auto 15px; background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 50px;">
+                                <i class="fas fa-user"></i>
                             </div>
-                            <div style="padding: 15px; border-left: 5px solid var(--secondary);">
-                                <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Pres. Commission Éducation</h5>
-                                <p style="margin: 0; color: #666;">Samba Laye Sarr</p>
+                            <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Mbaye Babacar Fall</h5>
+                            <p style="color: #666; margin: 0; font-weight: 500;">Pres. Commission Santé</p>
+                        </div>
+
+                        <!-- Pres. Commission Éducation -->
+                        <div style="text-align: center;">
+                            <div style="width: 150px; height: 150px; margin: 0 auto 15px; background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 50px;">
+                                <i class="fas fa-user"></i>
                             </div>
-                            <div style="padding: 15px; border-left: 5px solid var(--secondary);">
-                                <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Pres. Commission Environnement</h5>
-                                <p style="margin: 0; color: #666;">Ndeye Mbogne Kane</p>
+                            <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Samba Laye Sarr</h5>
+                            <p style="color: #666; margin: 0; font-weight: 500;">Pres. Commission Éducation</p>
+                        </div>
+
+                        <!-- Pres. Commission Environnement -->
+                        <div style="text-align: center;">
+                            <div style="width: 150px; height: 150px; margin: 0 auto 15px; background: linear-gradient(135deg, #27ae60 0%, #229954 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 50px;">
+                                <i class="fas fa-user"></i>
                             </div>
+                            <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Ndeye Mbogne Kane</h5>
+                            <p style="color: #666; margin: 0; font-weight: 500;">Pres. Commission Environnement</p>
                         </div>
                     </div>
                 </div>

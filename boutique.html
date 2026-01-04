@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique - MBAO Notre Priorité</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #2d5016;
+            --secondary-color: #1e40af;
+            --accent-color: #0ea5e9;
+            --light-bg: #f0f9ff;
+            --dark-text: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 0.5rem 0;
+        }
+        
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .navbar-brand img {
+            height: 50px;
+            width: auto;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--dark-text) !important;
+            font-weight: 500;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        
+        /* Section Title */
+        .section-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        /* Cards */
+        .card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .card-img-top {
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .card h5 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .price {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            font-weight: 700;
+            margin: 15px 0;
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--accent-color);
+            border: none;
+            color: white;
+            padding: 10px 25px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: #e67e22;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+            color: white;
+        }
+        
+        .info-box {
+            background: #e8f5e9;
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        
+        .info-box h5 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        footer a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo_mnp.jpeg" alt="Logo MBAO" style="height: 50px; width: auto;">
+                <span>MBAO</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#qui-sommes-nous">Qui sommes-nous</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#activites">Activités</a></li>
+                    <li class="nav-item"><a class="nav-link" href="galerie.html">Galerie</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="boutique.html">Boutique</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Boutique Officielle</h1>
+            <p>Soutenez le mouvement en achetant nos produits</p>
+        </div>
+    </section>
+
+    <!-- Boutique Section -->
+    <section class="container my-5">
+        <h2 class="section-title text-center mb-5">Nos Produits</h2>
+        
+        <div class="row">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card">
+                    <img src="image_activité.jpeg" class="card-img-top" alt="Pull MBAO" style="height: 250px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <h5><i class="fas fa-shirt"></i> Pull MBAO</h5>
+                        <p class="price">10 000 FCFA</p>
+                        <p style="font-size: 0.9rem; color: #666;">Tailles : S – M – L – XL – XXL</p>
+                        <a href="https://wa.me/221774938305?text=Bonjour%20MBAO,%20je%20souhaite%20commander%20un%20Pull%20MBAO%2010000FCFA.%20Taille:%20___" target="_blank" class="btn btn-primary-custom">Commander</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card">
+                    <img src="image_activité.jpeg" class="card-img-top" alt="T-shirt MBAO" style="height: 250px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <h5><i class="fas fa-shirt"></i> T-shirt MBAO</h5>
+                        <p class="price">5 000 FCFA</p>
+                        <p style="font-size: 0.9rem; color: #666;">Tailles : S – M – L – XL – XXL</p>
+                        <a href="https://wa.me/221774938305?text=Bonjour%20MBAO,%20je%20souhaite%20commander%20un%20T-shirt%20MBAO%205000FCFA.%20Taille:%20___" target="_blank" class="btn btn-primary-custom">Commander</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card">
+                    <img src="image_activité.jpeg" class="card-img-top" alt="Casquette MBAO" style="height: 250px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <h5><i class="fas fa-hat-cowboy-side"></i> Casquette MBAO</h5>
+                        <p class="price">3 000 FCFA</p>
+                        <p style="font-size: 0.9rem; color: #666;">Taille : Unique ajustable</p>
+                        <a href="https://wa.me/221774938305?text=Bonjour%20MBAO,%20je%20souhaite%20commander%20une%20Casquette%20MBAO%203000FCFA" target="_blank" class="btn btn-primary-custom">Commander</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Information Box -->
+        <div class="info-box">
+            <h5><i class="fas fa-credit-card"></i> Comment Commander ?</h5>
+            <div class="row mt-3">
+                <div class="col-md-4 mb-3">
+                    <h6 style="color: var(--primary-color); font-weight: 600;">1. Choisir le produit</h6>
+                    <p style="font-size: 0.9rem; margin: 0;">Sélectionnez le produit et la taille qui vous convient</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h6 style="color: var(--primary-color); font-weight: 600;">2. Cliquer sur Commander</h6>
+                    <p style="font-size: 0.9rem; margin: 0;">Un message WhatsApp pré-rempli s'ouvrira</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h6 style="color: var(--primary-color); font-weight: 600;">3. Effectuer le paiement</h6>
+                    <p style="font-size: 0.9rem; margin: 0;">Paiement par Wave ou Orange Money</p>
+                </div>
+            </div>
+            <p style="margin-top: 15px; font-weight: 600; color: var(--primary-color);">
+                <i class="fas fa-phone"></i> Numéro WhatsApp : <a href="https://wa.me/221774938305" style="color: var(--secondary-color); text-decoration: underline;">+221 77 493 83 05</a>
+            </p>
+            <p style="margin: 0; font-size: 0.9rem; color: #666;">✅ Après paiement, la commande est envoyée directement sur WhatsApp</p>
+        </div>
+
+        <!-- Modes de paiement -->
+        <div style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; padding: 30px; border-radius: 10px; margin-top: 30px; text-align: center;">
+            <h5 style="margin-bottom: 20px;"><i class="fas fa-wallet"></i> Modes de Paiement Acceptés</h5>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <p style="margin: 0;">💳 <strong>Wave</strong></p>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <p style="margin: 0;">🏦 <strong>Orange Money</strong></p>
+                </div>
+            </div>
+            <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">Contactez-nous au <strong>+221 77 493 83 05</strong> pour plus d'informations</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 MBAO Notre Priorité | Un mouvement pour le développement communautaire</p>
+            <p>
+                Email : <a href="mailto:mbaonotrepriorite@gmail.com">mbaonotrepriorite@gmail.com</a> | 
+                Téléphone : <a href="https://wa.me/221774938305">+221 77 493 83 05</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

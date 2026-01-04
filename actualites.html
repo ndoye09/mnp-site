@@ -175,40 +175,58 @@
         
         /* Footer */
         footer {
-            background: var(--dark);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
             padding: 50px 0 20px;
-            margin-top: 80px;
+            margin-top: 50px;
         }
         
-        .footer-content h5 {
-            font-weight: 700;
+        footer h5 {
+            font-weight: 600;
             margin-bottom: 20px;
+            color: white;
+        }
+        
+        footer a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        footer a:hover {
             color: var(--accent);
         }
         
-        .footer-content p, .footer-content a {
-            color: #b0c4de;
-            font-size: 0.95rem;
-            text-decoration: none;
-            transition: color 0.3s ease;
+        footer ul {
+            list-style: none;
+            padding: 0;
         }
         
-        .footer-content a:hover {
-            color: white;
+        footer ul li {
+            margin-bottom: 10px;
+        }
+        
+        footer ul li::before {
+            content: '▸ ';
+            color: var(--accent);
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
         }
         
         .social-links a {
-            display: inline-block;
+            display: inline-flex;
             width: 40px;
             height: 40px;
-            background: var(--secondary);
-            border-radius: 50%;
-            display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 10px;
-            color: white;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
             transition: all 0.3s ease;
         }
         
@@ -217,12 +235,11 @@
             transform: translateY(-3px);
         }
         
-        .footer-bottom {
-            text-align: center;
-            margin-top: 30px;
-            padding-top: 20px;
+        footer .footer-bottom {
             border-top: 1px solid rgba(255,255,255,0.1);
-            color: #b0c4de;
+            padding-top: 30px;
+            margin-top: 30px;
+            text-align: center;
         }
     </style>
 </head>

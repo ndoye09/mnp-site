@@ -1,0 +1,21 @@
+:root{--img-height:220px;--avatar-size:80px}
+/* Central image rules for consistent crop and sizing */
+.activity-img img,
+.article-image img {
+  width:100% !important;
+  height:var(--img-height) !important;
+  object-fit:cover !important;
+  display:block !important;
+}
+.activity-card img { width:100% !important; height:var(--img-height) !important; object-fit:cover !important; }
+.responsible-card img {
+  width:var(--avatar-size) !important;
+  height:var(--avatar-size) !important;
+  object-fit:cover !important;
+  border-radius:50% !important;
+  display:block !important;
+  margin:0 auto !important;
+}
+.event-header img { height:60px !important; width:auto !important; border-radius:8px !important; }
+/* Fallback small avatars */
+img.avatar-sm { width:150px !important; height:150px !important; object-fit:cover !important; display:block !important; }

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commission Économie - MBAO Notre Priorité</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #1e40af;
+            --accent: #0ea5e9;
+            --dark: #0f172a;
+            --light: #f0f9ff;
+            --gray: #64748b;
+            --commission-color: #f39c12;
+            --commission-dark: #d68910;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background: white; color: var(--dark); }
+
+        .navbar { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.08); padding: 0.8rem 0; border-bottom: 3px solid var(--primary); }
+        .navbar-brand { font-size: 1.3rem; font-weight: 800; color: var(--primary) !important; display: flex; align-items: center; gap: 10px; }
+        .navbar-brand img { height: 45px; }
+        .navbar-nav .nav-link { color: var(--dark) !important; font-weight: 600; transition: all 0.3s; }
+        .navbar-nav .nav-link:hover { color: var(--primary) !important; }
+
+        .hero { background: linear-gradient(135deg, var(--commission-color) 0%, var(--commission-dark) 100%); color: white; padding: 80px 0; text-align: center; }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 15px; }
+        .hero p { font-size: 1.1rem; opacity: 0.95; }
+
+        .section-title { color: var(--primary); font-weight: 800; font-size: 2.2rem; margin-bottom: 50px; position: relative; padding-bottom: 20px; }
+        .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: var(--accent); }
+
+        .presentation-card { background: var(--light); padding: 40px; border-radius: 12px; border-left: 5px solid var(--primary); box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 40px; }
+        .presentation-card h3 { color: var(--primary); font-weight: 700; margin-bottom: 20px; }
+        .presentation-card p { color: var(--gray); line-height: 1.8; margin-bottom: 15px; }
+
+        .activity-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 30px; transition: all 0.3s; border-top: 4px solid var(--commission-color); }
+        .activity-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
+        .activity-img { height: 220px; background: linear-gradient(135deg, rgba(243, 156, 18, 0.1), rgba(214, 137, 16, 0.1)); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--commission-color); }
+        .activity-body { padding: 25px; }
+        .activity-body h5 { color: var(--dark); font-weight: 700; margin-bottom: 12px; font-size: 1.2rem; }
+        .activity-body .date { color: var(--commission-color); font-weight: 600; font-size: 0.9rem; margin-bottom: 12px; }
+        .activity-body p { color: var(--gray); font-size: 0.95rem; line-height: 1.6; }
+
+        .responsible-card { background: white; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-top: 4px solid var(--primary); }
+        .responsible-card h6 { color: var(--primary); font-weight: 700; margin-top: 15px; margin-bottom: 5px; }
+        .responsible-card p { color: var(--accent); font-weight: 600; font-size: 0.85rem; }
+
+        .btn-back { display: inline-block; color: var(--primary); text-decoration: none; font-weight: 600; margin-bottom: 30px; transition: all 0.3s; }
+        .btn-back:hover { color: var(--accent); }
+
+        footer { background: var(--dark); color: white; padding: 40px 0 20px; margin-top: 60px; border-top: 4px solid var(--primary); }
+        footer h5 { font-weight: 700; margin-bottom: 20px; color: var(--accent); }
+        footer a { color: rgba(255,255,255,0.7); text-decoration: none; transition: all 0.3s; }
+        footer a:hover { color: white; }
+        footer ul { list-style: none; }
+        footer ul li { margin-bottom: 10px; }
+        footer ul li::before { content: '▸ '; color: var(--accent); margin-right: 8px; font-weight: bold; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; color: rgba(255,255,255,0.7); }
+    </style>
+</head>
+<body>
+    <!-- sauvegarde de la page original -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-lg">
+            <a class="navbar-brand" href="index.html"><img src="logo_mnp.jpeg" alt="Logo MBAO"><span>MBAO</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li><li class="nav-item"><a class="nav-link" href="index.html#qui-sommes-nous">Qui sommes-nous</a></li><li class="nav-item"><a class="nav-link" href="index.html#activites">Activit�s</a></li><li class="nav-item"><a class="nav-link" href="index.html#bureau">Bureau</a></li><li class="nav-item"><a class="nav-link" href="index.html#boutique">Boutique</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container-lg">
+            <h1><i class="fas fa-chart-line"></i> Commission Économie</h1>
+            <p>Promotion de l'entrepreneuriat et développement économique local</p>
+        </div>
+    </section>
+
+    <div class="container-lg my-5">
+        <a href="index.html#commissions" class="btn-back"><i class="fas fa-arrow-left"></i> Retour aux commissions</a>
+
+        <section class="mb-5">
+            <h2 class="section-title text-center">Présentation de la Commission</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="presentation-card">
+                        <h3><i class="fas fa-briefcase"></i> Qui sommes-nous ?</h3>
+                        <p>La commission économie de MBAO Notre Priorité œuvre pour le développement économique local et la promotion de l'entrepreneuriat. Nous accompagnons les acteurs économiques et les porteurs de projets pour créer des opportunités d'emploi et de revenus.</p>
+                        <p><strong>Nos objectifs :</strong></p>
+                        <ul style="color: var(--gray);"><li>✓ Formation et accompagnement entrepreneurial</li><li>✓ Appui aux microentreprises et PME</li><li>✓ Promotion des groupements d'épargne et de crédit</li><li>✓ Valorisation de l'artisanat et du commerce local</li></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="section-title text-center">Nos Activités</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="activity-card"><div class="activity-img"><i class="fas fa-graduation-cap"></i></div><div class="activity-body"><h5><i class="fas fa-book"></i> Formation Entrepreneuriale</h5><div class="date"><i class="far fa-calendar"></i> Trimestriel</div><p>Ateliers de formation en gestion d'entreprise, comptabilité, marketing et entrepreneuriat pour les jeunes.</p></div></div>
+                    <div class="activity-card"><div class="activity-img"><i class="fas fa-handshake"></i></div><div class="activity-body"><h5><i class="fas fa-industry"></i> Appui aux Microentreprises</h5><div class="date"><i class="far fa-calendar"></i> Continu</div><p>Accompagnement et financement des petits commerces et services, et soutien à la création d'entreprise.</p></div></div>
+                    <div class="activity-card"><div class="activity-img"><i class="fas fa-piggy-bank"></i></div><div class="activity-body"><h5><i class="fas fa-coins"></i> Groupements d'Épargne et de Crédit</h5><div class="date"><i class="far fa-calendar"></i> Régulier</div><p>Création et gestion de tontines et groupements d'épargne pour l'accès au crédit communautaire.</p></div></div>
+                    <div class="activity-card"><div class="activity-img"><i class="fas fa-hammer"></i></div><div class="activity-body"><h5><i class="fas fa-palette-alt"></i> Promotion de l'Artisanat Local</h5><div class="date"><i class="far fa-calendar"></i> En cours</div><p>Valorisation et commercialisation des produits artisanaux et de l'économie créative locale.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="section-title text-center">Responsable</h2>
+            <div class="row">
+                <div class="col-lg-4 mx-auto">
+                    <div class="responsible-card"><i class="fas fa-user-circle" style="font-size: 3rem; color: var(--primary);"></i><h6>Président Commission Économie</h6><p>Commission Économie - MBAO</p></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <h5><i class="fas fa-info-circle"></i> À propos</h5>
+                    <ul>
+                        <li><a href="#qui-sommes-nous">Qui sommes-nous</a></li>
+                        <li><a href="#activites">Nos activités</a></li>
+                        <li><a href="#commissions">Nos commissions</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5><i class="fas fa-link"></i> Ressources</h5>
+                    <ul>
+                        <li><a href="devenir-membre.html">Adhérer</a></li>
+                        <li><a href="actualites.html">Actualités</a></li>
+                        <li><a href="evenements.html">Événements</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5><i class="fas fa-phone"></i> Contact</h5>
+                    <p>Email : <a href="mailto:mbaonotrepriorite@gmail.com">mbaonotrepriorite@gmail.com</a></p>
+                    <p>Téléphone : <a href="https://wa.me/221774938305">+221 77 493 83 05</a></p>
+                    <p>Adresse : Grand Mbao, en face de la Pharmacie Grand Mbao</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5><i class="fas fa-share-alt"></i> Nous Suivre</h5>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MBAO Notre Priorité. Tous droits réservés | Un mouvement pour le développement communautaire</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

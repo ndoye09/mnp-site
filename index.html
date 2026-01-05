@@ -354,6 +354,7 @@
             align-items: center;
             justify-content: center;
             z-index: 10;
+            pointer-events: none; /* allow clicks through overlay */
         }
 
         .carousel-content {
@@ -362,6 +363,13 @@
             max-width: 700px;
             z-index: 20;
         }
+
+        .carousel-content { pointer-events: auto; }
+
+        /* Ensure controls and indicators are above overlay and clickable */
+        .carousel-control-prev,
+        .carousel-control-next,
+        .carousel-indicators { z-index: 30; }
 
         .carousel-content h1 {
             font-size: 3.5rem;

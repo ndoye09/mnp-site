@@ -3,126 +3,380 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commission Environnement - MBAO Notre Priorité</title>
+    <title>Environnement - MBAO Notre Priorité</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         :root {
-            --primary: #1e3a8a;
-            --secondary: #1e40af;
-            --accent: #0ea5e9;
-            --dark: #0f172a;
-            --light: #f0f9ff;
-            --gray: #64748b;
-            --commission-color: #27ae60;
-            --commission-dark: #229954;
+            --primary-color: #1e3a8a;
+            --secondary-color: #1e40af;
+            --accent-color: #0ea5e9;
+            --light-bg: #f0f9ff;
+            --dark-text: #0f172a;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 0.5rem 0;
+        }
+        
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .navbar-brand img {
+            height: 50px;
+            width: auto;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--dark-text) !important;
+            font-weight: 500;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            color: var(--secondary-color) !important;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .activity-card {
+            background: white;
+            border-radius: 12px;
+            overflow: visible;
+            box-shadow: 0 6px 22px rgba(15, 23, 42, 0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--secondary-color);
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            padding: 12px;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        /* Activity card image: fill its image container and crop if necessary */
+        .activity-card .activity-img {
+            flex: 0 0 45%;
+            height: 40vh; /* responsive height increased */
+            min-height: 240px; /* ensure a reasonable minimum */
+            max-height: 520px; /* avoid overly tall images on very large screens */
+            overflow: hidden;
+            border-radius: 8px;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background: white; color: var(--dark); }
+        .activity-card .activity-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* fill the area and crop to avoid letterboxing */
+            display: block;
+            box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+            border-radius: 8px;
+        }
 
-        .navbar { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.08); padding: 0.8rem 0; border-bottom: 3px solid var(--primary); }
-        .navbar-brand { font-size: 1.3rem; font-weight: 800; color: var(--primary) !important; display: flex; align-items: center; gap: 10px; }
-        .navbar-brand img { height: 45px; }
-        .navbar-nav .nav-link { color: var(--dark) !important; font-weight: 600; transition: all 0.3s; }
-        .navbar-nav .nav-link:hover { color: var(--primary) !important; }
+        /* Ensure all activity images cover their container height */
+        .activity-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* cover the container height and width */
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 8px 26px rgba(2,6,23,0.06);
+        }
 
-        .hero { background: linear-gradient(135deg, var(--commission-color) 0%, var(--commission-dark) 100%); color: white; padding: 80px 0; text-align: center; }
-        .hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 15px; }
-        .hero p { font-size: 1.1rem; opacity: 0.95; }
+        /* Hero image specific styles (first image) */
+        .activity-img.hero-img {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+        }
 
-        .section-title { color: var(--primary); font-weight: 800; font-size: 2.2rem; margin-bottom: 50px; position: relative; padding-bottom: 20px; }
-        .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: var(--accent); }
+        .activity-img.hero-img img {
+            max-height: 360px;
+            width: 100%;
+            height: auto;
+            object-fit: cover; /* fill the area and avoid extra blank space below */
+            display: block;
+        }
 
-        .presentation-card { background: var(--light); padding: 40px; border-radius: 12px; border-left: 5px solid var(--primary); box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 40px; }
-        .presentation-card h3 { color: var(--primary); font-weight: 700; margin-bottom: 20px; }
-        .presentation-card p { color: var(--gray); line-height: 1.8; margin-bottom: 15px; }
+        .activity-img.hero-img .hero-caption {
+            position: absolute;
+            left: 18px;
+            bottom: 18px;
+            background: linear-gradient(90deg, rgba(0,0,0,0.42), rgba(0,0,0,0.18));
+            color: #fff;
+            padding: 12px 14px;
+            border-radius: 8px;
+            max-width: 65%;
+            box-shadow: 0 6px 18px rgba(2,6,23,0.18);
+        }
 
-        .activity-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 30px; transition: all 0.3s; border-top: 4px solid var(--commission-color); }
-        .activity-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
-        .activity-img { height: 220px; background: linear-gradient(135deg, rgba(39, 174, 96, 0.1), rgba(34, 153, 84, 0.1)); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--commission-color); }
-        .activity-body { padding: 25px; }
-        .activity-body h5 { color: var(--dark); font-weight: 700; margin-bottom: 12px; font-size: 1.2rem; }
-        .activity-body .date { color: var(--commission-color); font-weight: 600; font-size: 0.9rem; margin-bottom: 12px; }
-        .activity-body p { color: var(--gray); font-size: 0.95rem; line-height: 1.6; }
+        .activity-img.hero-img .hero-caption h3 { margin: 0 0 6px 0; font-size: 1.15rem; font-weight: 700; }
+        .activity-img.hero-img .hero-caption p { margin: 0 0 8px 0; opacity: 0.95; }
+        .activity-img.hero-img .hero-caption .btn { font-weight: 700; }
+        .activity-img.hero-img .hero-caption .btn {
+            background: var(--accent-color);
+            color: #08203a;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            box-shadow: 0 6px 18px rgba(2,6,23,0.12);
+            transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+        }
+        .activity-img.hero-img .hero-caption .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 26px rgba(2,6,23,0.18);
+            opacity: 0.98;
+        }
 
-        .responsible-card { background: white; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-top: 4px solid var(--primary); }
-        .responsible-card h6 { color: var(--primary); font-weight: 700; margin-top: 15px; margin-bottom: 5px; }
-        .responsible-card p { color: var(--accent); font-weight: 600; font-size: 0.85rem; }
+        /* Layout: image left, content right on wide screens */
+        .activity-card .activity-img { flex: 0 0 45%; }
+        .activity-card .activity-card-body { flex: 1 1 55%; }
 
-        .btn-back { display: inline-block; color: var(--primary); text-decoration: none; font-weight: 600; margin-bottom: 30px; transition: all 0.3s; }
-        .btn-back:hover { color: var(--accent); }
-
-        footer { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 50px 0 20px; margin-top: 50px; }
-        footer h5 { font-weight: 600; margin-bottom: 20px; color: white; }
-        footer a { color: rgba(255,255,255,0.9); text-decoration: none; transition: all 0.3s ease; }
-        footer a:hover { color: var(--accent); }
-        footer ul { list-style: none; padding: 0; }
-        footer ul li { margin-bottom: 10px; }
-        footer ul li::before { content: '▸ '; color: var(--accent); margin-right: 8px; font-weight: bold; }
-        .social-links { display: flex; gap: 15px; margin-top: 15px; }
-        .social-links a { display: inline-flex; width: 40px; height: 40px; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); border-radius: 50%; transition: all 0.3s ease; }
-        .social-links a:hover { background: var(--accent); transform: translateY(-3px); }
-        footer .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; margin-top: 30px; text-align: center; }
+        @media (max-width: 992px) {
+            .activity-card { flex-direction: column; padding: 0; }
+            .activity-card .activity-img { flex: none; width: 100%; height: auto; }
+            .activity-card .activity-img img { height: auto; object-fit: cover; max-height: 420px; }
+        }
+        
+        .activity-card-body {
+            padding: 25px;
+        }
+        
+        .activity-card h5 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .activity-card p {
+            color: #666;
+            margin-bottom: 0;
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--accent-color);
+            border: none;
+            color: white;
+            padding: 12px 35px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: #e67e22;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+            color: white;
+        }
+        
+        .placeholder-box {
+            background: #f0f0f0;
+            border: 2px dashed #ccc;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            color: #999;
+            margin-bottom: 30px;
+        }
+        
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-back:hover {
+            color: var(--accent-color);
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        footer a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: var(--accent-color);
+        }
     </style>
     <link href="css/images.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container-lg">
-            <a class="navbar-brand" href="index.html"><img src="logo_mnp.jpeg" alt="Logo MBAO"><span>MBAO</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo_mnp.jpeg" alt="Logo MBAO">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li><li class="nav-item"><a class="nav-link" href="index.html#qui-sommes-nous">Qui sommes-nous</a></li><li class="nav-item"><a class="nav-link" href="index.html#activites">Activit�s</a></li><li class="nav-item"><a class="nav-link" href="index.html#bureau">Bureau</a></li><li class="nav-item"><a class="nav-link" href="index.html#boutique">Boutique</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#qui-sommes-nous">Qui sommes-nous</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#activites">Activités</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#boutique">Boutique</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="container-lg">
+        <div class="container">
             <h1><i class="fas fa-leaf"></i> Commission Environnement</h1>
             <p>Protection des ressources naturelles et développement durable</p>
         </div>
     </section>
 
-    <div class="container-lg my-5">
+    <!-- Main Content -->
+    <div class="container my-5">
         <a href="index.html#activites" class="btn-back"><i class="fas fa-arrow-left"></i> Retour aux commissions</a>
 
-        <section class="mb-5">
-            <h2 class="section-title text-center">Présentation de la Commission</h2>
+        <!-- Description -->
+        <section class="my-5">
+            <h2 class="section-title text-center mb-5">Nos Objectifs</h2>
             <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="presentation-card">
-                        <h3><i class="fas fa-earth-americas"></i> Qui sommes-nous ?</h3>
-                        <p>La commission environnement œuvre pour la protection des ressources naturelles et la promotion d'un développement durable à Mbao. Nous travaillons pour lutter contre la désertification, promouvoir le reboisement et sensibiliser à la gestion responsable de l'environnement.</p>
-                        <p><strong>Nos objectifs :</strong></p>
-                        <ul style="color: var(--gray);"><li>✓ Reboisement et lutte contre la désertification</li><li>✓ Nettoyage et assainissement des zones publiques</li><li>✓ Gestion durable des ressources naturelles</li><li>✓ Sensibilisation à la protection de l'environnement</li></ul>
+                    <div class="col-lg-8 mx-auto">
+                    <p style="font-size: 1.1rem; text-align: center; color: #666; margin-bottom: 30px;">
+                        La commission environnement de MBAO Notre Priorité agit pour la protection des ressources naturelles, le reboisement et la sensibilisation au développement durable.
+                    </p>
+                    <div class="activity-img hero-img" style="padding:0;">
+                        <img src="photos/nettoyage.jpeg" alt="Environnement">
+                        <div class="hero-caption">
+                            <h3>Commission Environnement</h3>
+                            <p class="small">Protection des ressources naturelles et développement durable</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="mb-5">
-            <h2 class="section-title text-center">Nos Activités</h2>
+        <!-- Activités -->
+        <section class="my-5">
+            <h2 class="section-title text-center mb-5">Nos Activités</h2>
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <div class="activity-card"><div class="activity-img" style="padding:0;"><img src="photos/nettoyage.jpeg" alt="Nettoyage" style="width:100%; height:220px; object-fit:cover; display:block;"></div><div class="activity-body"><h5><i class="fas fa-forest"></i> Campagnes de Reboisement</h5><div class="date"><i class="far fa-calendar"></i> Annuel</div><p>Plantation de milliers d'arbres pour lutter contre la désertification. Plus de 5000 arbres plantés depuis 2023.</p></div></div>
-                    <div class="activity-card"><div class="activity-img" style="padding:0;"><img src="photos/nettoyage.jpg" alt="Nettoyage" style="width:100%; height:220px; object-fit:cover; display:block;"></div><div class="activity-body"><h5><i class="fas fa-person-hiking"></i> Nettoyage Communautaire</h5><div class="date"><i class="far fa-calendar"></i> Mensuel</div><p>Opérations régulières de nettoyage des quartiers, écoles et espaces publics pour une Mbao plus propre.</p></div></div>
-                    <div class="activity-card"><div class="activity-img" style="padding:0;"><img src="photos/nettoyage5.jpg" alt="Nettoyage5" style="width:100%; height:220px; object-fit:cover; display:block;"></div><div class="activity-body"><h5><i class="fas fa-trash"></i> Gestion des Déchets</h5><div class="date"><i class="far fa-calendar"></i> En cours</div><p>Sensibilisation au tri sélectif et accompagnement des ménages pour une meilleure gestion des déchets.</p></div></div>
-                    <div class="activity-card"><div class="activity-img" style="padding:0;"><img src="photos/panel.jpg" alt="Panel" style="width:100%; height:220px; object-fit:cover; display:block;"></div><div class="activity-body"><h5><i class="fas fa-droplet"></i> Préservation des Ressources</h5><div class="date"><i class="far fa-calendar"></i> Continu</div><p>Protection des points d'eau et sensibilisation à l'utilisation durable de l'eau dans la communauté.</p></div></div>
+                    <div class="activity-card">
+                        <div class="activity-img" style="padding:0;"><img src="photos/nettoyage.jpeg" alt="Reboisement"></div>
+                        <div class="activity-card-body">
+                            <h5><i class="fas fa-forest"></i>Campagnes de reboisement</h5>
+                            <p>Date: <strong>Annuel</strong></p>
+                            <p>Plantation d'arbres et actions pour lutter contre la désertification.</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <div class="activity-img" style="padding:0;"><img src="photos/nettoyage.jpg" alt="Nettoyage"></div>
+                        <div class="activity-card-body">
+                            <h5><i class="fas fa-person-hiking"></i>Nettoyages communautaires</h5>
+                            <p>Date: <strong>Mensuel</strong></p>
+                            <p>Opérations de nettoyage et sensibilisation au tri des déchets.</p>
+                        </div>
+                    </div>
+
+                    <div class="activity-card">
+                        <div class="activity-img" style="padding:0;"><img src="photos/panel.jpg" alt="Préservation"></div>
+                        <div class="activity-card-body">
+                            <h5><i class="fas fa-droplet"></i>Préservation des ressources</h5>
+                            <p>Date: <strong>Continu</strong></p>
+                            <p>Actions pour protéger l'eau et sensibiliser à l'utilisation durable des ressources naturelles.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="mb-5">
-            <h2 class="section-title text-center">Responsable</h2>
+        <!-- Responsable -->
+        <section class="my-5">
+            <h2 class="section-title text-center mb-5">Responsable</h2>
             <div class="row">
-                <div class="col-lg-4 mx-auto">
-                    <div class="responsible-card"><img src="photos/ndogou8.jpeg" alt="Ndeye Mbogne Kane"><h6>Ndeye Mbogne Kane</h6><p>Président Commission Environnement</p></div>
+                <div class="col-lg-4 mx-auto text-center">
+                    <div style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h5 style="color: var(--primary-color); font-weight: 600; margin-bottom: 5px;">Ndeye Mbogne Kane</h5>
+                        <p style="color: #666; margin-bottom: 0;">Président Commission Environnement</p>
+                    </div>
                 </div>
             </div>
         </section>

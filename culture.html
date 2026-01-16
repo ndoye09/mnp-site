@@ -3,126 +3,743 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commission Culture - MBAO Notre Priorité</title>
+    <title>Santé - MBAO Notre Priorité</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         :root {
-            --primary: #1e3a8a;
-            --secondary: #1e40af;
-            --accent: #0ea5e9;
-            --dark: #0f172a;
-            --light: #f0f9ff;
-            --gray: #64748b;
-            --commission-color: #8e44ad;
-            --commission-dark: #7d3c98;
+            --primary-color: #1e3a8a;
+            --secondary-color: #1e40af;
+            --accent-color: #0ea5e9;
+            --light-bg: #f0f9ff;
+            --dark-text: #0f172a;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 0.5rem 0;
+        }
+        
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .navbar-brand img {
+            height: 50px;
+            width: auto;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--dark-text) !important;
+            font-weight: 500;
+            margin: 0 5px;
+            <!DOCTYPE html>
+            <html lang="fr">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Santé - MBAO Notre Priorité</title>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+                <style>
+                    * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                    }
+        
+                    :root {
+                        --primary-color: #1e3a8a;
+                        --secondary-color: #1e40af;
+                        --accent-color: #0ea5e9;
+                        --light-bg: #f0f9ff;
+                        --dark-text: #0f172a;
+                    }
+        
+                    body {
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        background-color: var(--light-bg);
+                        color: var(--dark-text);
+                        line-height: 1.6;
+                    }
+        
+                    /* Navbar */
+                    .navbar {
+                        background: white;
+                        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                        padding: 0.5rem 0;
+                    }
+        
+                    .navbar-brand {
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        color: var(--primary-color) !important;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+        
+                    .navbar-brand img {
+                        height: 50px;
+                        width: auto;
+                    }
+        
+                    .navbar-nav .nav-link {
+                        color: var(--dark-text) !important;
+                        font-weight: 500;
+                        margin: 0 5px;
+                        transition: all 0.3s ease;
+                    }
+        
+                    .navbar-nav .nav-link:hover {
+                        color: var(--secondary-color) !important;
+                    }
+        
+                    /* Hero Section */
+                    .hero {
+                        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+                        color: white;
+                        padding: 80px 0;
+                        text-align: center;
+                    }
+        
+                    .hero h1 {
+                        font-size: 2.5rem;
+                        font-weight: 700;
+                        margin-bottom: 10px;
+                    }
+        
+                    .hero p {
+                        font-size: 1.1rem;
+                        opacity: 0.95;
+                    }
+        
+                    .section-title {
+                        color: var(--primary-color);
+                        font-weight: 700;
+                        margin-bottom: 40px;
+                        font-size: 2rem;
+                        position: relative;
+                        display: inline-block;
+                        width: 100%;
+                    }
+        
+                    .section-title::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -10px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 60px;
+                        height: 4px;
+                        background: var(--accent-color);
+                        border-radius: 2px;
+                    }
+        
+                    .activity-card {
+                        background: white;
+                        border-radius: 12px;
+                        overflow: visible;
+                        box-shadow: 0 6px 22px rgba(15, 23, 42, 0.08);
+                        transition: transform 0.25s ease, box-shadow 0.25s ease;
+                        margin-bottom: 30px;
+                        border-left: 5px solid var(--secondary-color);
+                        display: flex;
+                        gap: 24px;
+                        align-items: flex-start;
+                        padding: 12px;
+                    }
+        
+                    .activity-card:hover {
+                        transform: translateY(-10px);
+                        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+                    }
+        
+                    /* Activity card image: fill its image container and crop if necessary */
+                    .activity-card .activity-img {
+                        flex: 0 0 45%;
+                        height: 40vh; /* responsive height increased */
+                        min-height: 240px; /* ensure a reasonable minimum */
+                        max-height: 520px; /* avoid overly tall images on very large screens */
+                        overflow: hidden;
+                        border-radius: 8px;
+                    }
+
+                    .activity-card .activity-img img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover; /* fill the area and crop to avoid letterboxing */
+                        display: block;
+                        box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+                        border-radius: 8px;
+                    }
+
+                    /* Ensure all activity images cover their container height */
+                    .activity-img img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover; /* cover the container height and width */
+                        display: block;
+                        border-radius: 10px;
+                        box-shadow: 0 8px 26px rgba(2,6,23,0.06);
+                    }
+
+                    /* Hero image specific styles (first image) */
+                    .activity-img.hero-img {
+                        position: relative;
+                        overflow: hidden;
+                        border-radius: 12px;
+                    }
+
+                    .activity-img.hero-img img {
+                        max-height: 360px;
+                        width: 100%;
+                        height: auto;
+                        object-fit: cover; /* fill the area and avoid extra blank space below */
+                        display: block;
+                    }
+
+                    .activity-img.hero-img .hero-caption {
+                        position: absolute;
+                        left: 18px;
+                        bottom: 18px;
+                        background: linear-gradient(90deg, rgba(0,0,0,0.42), rgba(0,0,0,0.18));
+                        color: #fff;
+                        padding: 12px 14px;
+                        border-radius: 8px;
+                        max-width: 65%;
+                        box-shadow: 0 6px 18px rgba(2,6,23,0.18);
+                    }
+
+                    .activity-img.hero-img .hero-caption h3 { margin: 0 0 6px 0; font-size: 1.15rem; font-weight: 700; }
+                    .activity-img.hero-img .hero-caption p { margin: 0 0 8px 0; opacity: 0.95; }
+                    .activity-img.hero-img .hero-caption .btn { font-weight: 700; }
+                    .activity-img.hero-img .hero-caption .btn {
+                        background: var(--accent-color);
+                        color: #08203a;
+                        border: none;
+                        padding: 8px 12px;
+                        border-radius: 6px;
+                        box-shadow: 0 6px 18px rgba(2,6,23,0.12);
+                        transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+                    }
+                    .activity-img.hero-img .hero-caption .btn:hover {
+                        transform: translateY(-3px);
+                        box-shadow: 0 10px 26px rgba(2,6,23,0.18);
+                        opacity: 0.98;
+                    }
+
+                    /* Layout: image left, content right on wide screens */
+                    .activity-card .activity-img { flex: 0 0 45%; }
+                    .activity-card .activity-card-body { flex: 1 1 55%; }
+
+                    @media (max-width: 992px) {
+                        .activity-card { flex-direction: column; padding: 0; }
+                        .activity-card .activity-img { flex: none; width: 100%; height: auto; }
+                        .activity-card .activity-img img { height: auto; object-fit: cover; max-height: 420px; }
+                    }
+        
+                    .activity-card-body {
+                        padding: 25px;
+                    }
+        
+                    .activity-card h5 {
+                        color: var(--primary-color);
+                        font-weight: 600;
+                        margin-bottom: 10px;
+                    }
+        
+                    .activity-card p {
+                        color: #666;
+                        margin-bottom: 0;
+                    }
+        
+                    .btn-primary-custom {
+                        background-color: var(--accent-color);
+                        border: none;
+                        color: white;
+                        padding: 12px 35px;
+                        font-weight: 600;
+                        border-radius: 50px;
+                        transition: all 0.3s ease;
+                        display: inline-block;
+                        text-decoration: none;
+                    }
+        
+                    .btn-primary-custom:hover {
+                        background-color: #e67e22;
+                        transform: translateY(-2px);
+                        box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+                        color: white;
+                    }
+        
+                    .placeholder-box {
+                        background: #f0f0f0;
+                        border: 2px dashed #ccc;
+                        padding: 40px;
+                        border-radius: 10px;
+                        text-align: center;
+                        color: #999;
+                        margin-bottom: 30px;
+                    }
+        
+                    .btn-back {
+                        display: inline-block;
+                        margin-bottom: 30px;
+                        color: var(--primary-color);
+                        text-decoration: none;
+                        font-weight: 600;
+                        transition: all 0.3s ease;
+                    }
+        
+                    .btn-back:hover {
+                        color: var(--accent-color);
+                    }
+        
+                    footer {
+                        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+                        color: white;
+                        padding: 30px 0;
+                        margin-top: 50px;
+                        text-align: center;
+                    }
+        
+                    footer a {
+                        color: rgba(255,255,255,0.9);
+                        text-decoration: none;
+                        transition: all 0.3s ease;
+                    }
+        
+                    footer a:hover {
+                        color: var(--accent-color);
+                    }
+                </style>
+                <link href="css/images.css" rel="stylesheet">
+            </head>
+            <body>
+                <!-- Navigation -->
+                <nav class="navbar navbar-expand-lg sticky-top">
+                    <div class="container">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="logo_mnp.jpeg" alt="Logo MBAO">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                                <li class="nav-item"><a class="nav-link" href="index.html#qui-sommes-nous">Qui sommes-nous</a></li>
+                                <li class="nav-item"><a class="nav-link" href="index.html#activites">Activités</a></li>
+                                <li class="nav-item"><a class="nav-link" href="index.html#boutique">Boutique</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Hero Section -->
+                <section class="hero">
+                    <div class="container">
+                        <h1><i class="fas fa-heartbeat"></i> Commission Santé</h1>
+                        <p>Améliorer la santé et le bien-être de notre communauté</p>
+                    </div>
+                </section>
+
+                <!-- Main Content -->
+                <div class="container my-5">
+                    <a href="index.html#activites" class="btn-back"><i class="fas fa-arrow-left"></i> Retour aux commissions</a>
+
+                    <!-- Description -->
+                    <section class="my-5">
+                        <h2 class="section-title text-center mb-5">Nos Objectifs</h2>
+                        <div class="row">
+                                <div class="col-lg-8 mx-auto">
+                                <p style="font-size: 1.1rem; text-align: center; color: #666; margin-bottom: 30px;">
+                                    La commission santé de MBAO Notre Priorité œuvre pour améliorer l'accès à la santé, 
+                                    sensibiliser aux comportements sains et promouvoir le bien-être dans notre communauté.
+                                </p>
+                                <div class="activity-img hero-img" style="padding:0;">
+                                    <img src="photos/santé.jpg" alt="Daara2">
+                                    <div class="hero-caption">
+                                        <h3>Commission Santé</h3>
+                                        <p class="small">Améliorer la santé et le bien‑être de notre communauté</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Activités -->
+                    <section class="my-5">
+                        <h2 class="section-title text-center mb-5">Nos Activités</h2>
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <!-- Activité 1 -->
+                                <div class="activity-card">
+                                    <div class="activity-img" style="padding:0;"><img src="photos/santé_dara.jpg" alt="Daara4"></div>
+                                    <div class="activity-card-body">
+                                        <h5><i class="fas fa-clinic-medical"></i>GUÈSS-TOU TALIBÉS YII</h5>
+                                        <p>Date: <strong>Samedi 18 mars 2023</strong></p>
+                                        <p>La journée a concerné deux daaras de la ZAC de Mbao (imam Baldé et imam Malick Diouf). Elle a été marquée par des récitals du Coran, des prières, un petit-déjeuner avec les talibés, des consultations et soins gratuits avec la Croix-Rouge, des animations religieuses et une remise de dons. La journée s’est déroulée dans un esprit de communion et de solidarité, avec le soutien de plusieurs partenaires.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Activité 2 -->
+                                <div class="activity-card">
+                                    <div class="activity-img" style="padding:0;"><img src="photos/consultation_2023.jpg" alt="Daara5"></div>
+                                    <div class="activity-card-body">
+                                        <h5><i class="fas fa-clinic-medical"></i>Journée de consultation gratuite</h5>
+                                        <p>Date: <strong>samedi 02 Décembre 2023</strong></p>
+                                        <p>Une journée de consultations médicales gratuites s’est tenue le 02 décembre 2023 à l’initiative de MBAO NOTRE PRIORITÉ, en collaboration avec MBAO Assistance Médicale et la Croix-Rouge. Des médecins généralistes et spécialistes ont participé pour faciliter l’accès aux soins des populations. L’action visait à renforcer la solidarité et l’engagement citoyen, avec des remerciements adressés aux partenaires, donateurs et membres du mouvement pour leur soutien.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Activité 3 -->
+                                <div class="activity-card">
+                                    <div class="activity-img" style="padding:0;"><img src="photos/don-de-sang.jpg" alt="Denree alimentaire"></div>
+                                    <div class="activity-card-body">
+                                        <h5><i class="fas fa-clinic-medical"></i>Journée de don de sang</h5>
+                                        <p>Date: <strong>Samedi 8 février 2025</strong></p>
+                                        <p>L’Association MBAO NOTRE PRIORITÉ, en partenariat avec AMEX et IADEM, a organisé une journée de don de sang au poste de santé de Mbao, permettant de collecter 51 poches de sang grâce à la mobilisation des populations. Cette action humanitaire souligne l’importance de la solidarité et de l’engagement citoyen, avec des remerciements adressés aux donneurs, partenaires et membres de l’association.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Responsable -->
+                    <section class="my-5">
+                        <h2 class="section-title text-center mb-5">Responsable</h2>
+                        <div class="row">
+                            <div class="col-lg-4 mx-auto text-center">
+                                <div style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                                    <h5 style="color: var(--primary-color); font-weight: 600; margin-bottom: 5px;">Mbaye Babacar Fall</h5>
+                                    <p style="color: #666; margin-bottom: 0;">Président Commission Santé</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Footer -->
+                <footer>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3 mb-4">
+                                <h5><i class="fas fa-info-circle"></i> À propos</h5>
+                                <ul>
+                                    <li><a href="index.html#qui-sommes-nous">Qui sommes-nous</a></li>
+                                    <li><a href="index.html#activites">Nos activités</a></li>
+                                    <li><a href="index.html#activites">Nos commissions</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3 mb-4">
+                                <h5><i class="fas fa-link"></i> Ressources</h5>
+                                <ul>
+                                    <li><a href="devenir-membre.html">Adhérer</a></li>
+                                    <li><a href="actualites.html">Actualités</a></li>
+                                    <li><a href="evenements.html">Événements</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3 mb-4">
+                                <h5><i class="fas fa-phone"></i> Contact</h5>
+                                <p>Email : <a href="mailto:mbaonotrepriorite@gmail.com">mbaonotrepriorite@gmail.com</a></p>
+                                <p>Téléphone : <a href="https://wa.me/221774938305">+221 77 493 83 05</a></p>
+                                <p>Adresse : Grand Mbao, en face de la Pharmacie Grand Mbao</p>
+                            </div>
+                            <div class="col-md-3 mb-4">
+                                <h5><i class="fas fa-share-alt"></i> Nous Suivre</h5>
+                                <div class="social-links">
+                                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-bottom">
+                            <p>&copy; 2026 MBAO Notre Priorité. Tous droits réservés | Un mouvement pour le développement communautaire</p>
+                        </div>
+                    </div>
+                </footer>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+            </body>
+            </html>
+            border-radius: 8px;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background: white; color: var(--dark); }
+        .activity-card .activity-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* fill the area and crop to avoid letterboxing */
+            display: block;
+            box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+            border-radius: 8px;
+        }
 
-        .navbar { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.08); padding: 0.8rem 0; border-bottom: 3px solid var(--primary); }
-        .navbar-brand { font-size: 1.3rem; font-weight: 800; color: var(--primary) !important; display: flex; align-items: center; gap: 10px; }
-        .navbar-brand img { height: 45px; }
-        .navbar-nav .nav-link { color: var(--dark) !important; font-weight: 600; transition: all 0.3s; }
-        .navbar-nav .nav-link:hover { color: var(--primary) !important; }
+        /* Ensure all activity images cover their container height */
+        .activity-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* cover the container height and width */
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 8px 26px rgba(2,6,23,0.06);
+        }
 
-        .hero { background: linear-gradient(135deg, var(--commission-color) 0%, var(--commission-dark) 100%); color: white; padding: 80px 0; text-align: center; }
-        .hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 15px; }
-        .hero p { font-size: 1.1rem; opacity: 0.95; }
+        /* Hero image specific styles (first image) */
+        .activity-img.hero-img {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+        }
 
-        .section-title { color: var(--primary); font-weight: 800; font-size: 2.2rem; margin-bottom: 50px; position: relative; padding-bottom: 20px; }
-        .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: var(--accent); }
+        .activity-img.hero-img img {
+            max-height: 360px;
+            width: 100%;
+            height: auto;
+            object-fit: cover; /* fill the area and avoid extra blank space below */
+            display: block;
+        }
 
-        .presentation-card { background: var(--light); padding: 40px; border-radius: 12px; border-left: 5px solid var(--primary); box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-bottom: 40px; }
-        .presentation-card h3 { color: var(--primary); font-weight: 700; margin-bottom: 20px; }
-        .presentation-card p { color: var(--gray); line-height: 1.8; margin-bottom: 15px; }
+        .activity-img.hero-img .hero-caption {
+            position: absolute;
+            left: 18px;
+            bottom: 18px;
+            background: linear-gradient(90deg, rgba(0,0,0,0.42), rgba(0,0,0,0.18));
+            color: #fff;
+            padding: 12px 14px;
+            border-radius: 8px;
+            max-width: 65%;
+            box-shadow: 0 6px 18px rgba(2,6,23,0.18);
+        }
 
-        .activity-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 30px; transition: all 0.3s; border-top: 4px solid var(--commission-color); }
-        .activity-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
-        .activity-img { height: 220px; background: linear-gradient(135deg, rgba(142, 68, 173, 0.1), rgba(125, 60, 152, 0.1)); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--commission-color); }
-        .activity-body { padding: 25px; }
-        .activity-body h5 { color: var(--dark); font-weight: 700; margin-bottom: 12px; font-size: 1.2rem; }
-        .activity-body .date { color: var(--commission-color); font-weight: 600; font-size: 0.9rem; margin-bottom: 12px; }
-        .activity-body p { color: var(--gray); font-size: 0.95rem; line-height: 1.6; }
+        .activity-img.hero-img .hero-caption h3 { margin: 0 0 6px 0; font-size: 1.15rem; font-weight: 700; }
+        .activity-img.hero-img .hero-caption p { margin: 0 0 8px 0; opacity: 0.95; }
+        .activity-img.hero-img .hero-caption .btn { font-weight: 700; }
+        .activity-img.hero-img .hero-caption .btn {
+            background: var(--accent-color);
+            color: #08203a;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            box-shadow: 0 6px 18px rgba(2,6,23,0.12);
+            transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+        }
+        .activity-img.hero-img .hero-caption .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 26px rgba(2,6,23,0.18);
+            opacity: 0.98;
+        }
 
-        .responsible-card { background: white; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-top: 4px solid var(--primary); }
-        .responsible-card h6 { color: var(--primary); font-weight: 700; margin-top: 15px; margin-bottom: 5px; }
-        .responsible-card p { color: var(--accent); font-weight: 600; font-size: 0.85rem; }
+        /* Layout: image left, content right on wide screens */
+        .activity-card .activity-img { flex: 0 0 45%; }
+        .activity-card .activity-card-body { flex: 1 1 55%; }
 
-        .btn-back { display: inline-block; color: var(--primary); text-decoration: none; font-weight: 600; margin-bottom: 30px; transition: all 0.3s; }
-        .btn-back:hover { color: var(--accent); }
-
-        footer { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 50px 0 20px; margin-top: 50px; }
-        footer h5 { font-weight: 600; margin-bottom: 20px; color: white; }
-        footer a { color: rgba(255,255,255,0.9); text-decoration: none; transition: all 0.3s ease; }
-        footer a:hover { color: var(--accent); }
-        footer ul { list-style: none; padding: 0; }
-        footer ul li { margin-bottom: 10px; }
-        footer ul li::before { content: '▸ '; color: var(--accent); margin-right: 8px; font-weight: bold; }
-        .social-links { display: flex; gap: 15px; margin-top: 15px; }
-        .social-links a { display: inline-flex; width: 40px; height: 40px; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); border-radius: 50%; transition: all 0.3s ease; }
-        .social-links a:hover { background: var(--accent); transform: translateY(-3px); }
-        footer .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; margin-top: 30px; text-align: center; }
+        @media (max-width: 992px) {
+            .activity-card { flex-direction: column; padding: 0; }
+            .activity-card .activity-img { flex: none; width: 100%; height: auto; }
+            .activity-card .activity-img img { height: auto; object-fit: cover; max-height: 420px; }
+        }
+        
+        .activity-card-body {
+            padding: 25px;
+        }
+        
+        .activity-card h5 {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .activity-card p {
+            color: #666;
+            margin-bottom: 0;
+        }
+        
+        .btn-primary-custom {
+            background-color: var(--accent-color);
+            border: none;
+            color: white;
+            padding: 12px 35px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .btn-primary-custom:hover {
+            background-color: #e67e22;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+            color: white;
+        }
+        
+        .placeholder-box {
+            background: #f0f0f0;
+            border: 2px dashed #ccc;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            color: #999;
+            margin-bottom: 30px;
+        }
+        
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-back:hover {
+            color: var(--accent-color);
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+            text-align: center;
+        }
+        
+        footer a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: var(--accent-color);
+        }
     </style>
     <link href="css/images.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container-lg">
-            <a class="navbar-brand" href="index.html"><img src="logo_mnp.jpeg" alt="Logo MBAO"><span>MBAO</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo_mnp.jpeg" alt="Logo MBAO">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li><li class="nav-item"><a class="nav-link" href="index.html#qui-sommes-nous">Qui sommes-nous</a></li><li class="nav-item"><a class="nav-link" href="index.html#activites">Activit�s</a></li><li class="nav-item"><a class="nav-link" href="index.html#bureau">Bureau</a></li><li class="nav-item"><a class="nav-link" href="index.html#boutique">Boutique</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#qui-sommes-nous">Qui sommes-nous</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#activites">Activités</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#boutique">Boutique</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="container-lg">
-            <h1><i class="fas fa-music"></i> Commission Culture</h1>
-            <p>Préserver et valoriser notre richesse culturelle</p>
+        <div class="container">
+            <h1><i class="fas fa-heartbeat"></i> Commission Santé</h1>
+            <p>Améliorer la santé et le bien-être de notre communauté</p>
         </div>
     </section>
 
-    <div class="container-lg my-5">
+    <!-- Main Content -->
+    <div class="container my-5">
         <a href="index.html#activites" class="btn-back"><i class="fas fa-arrow-left"></i> Retour aux commissions</a>
 
-        <section class="mb-5">
-            <h2 class="section-title text-center">Présentation de la Commission</h2>
+        <!-- Description -->
+        <section class="my-5">
+            <h2 class="section-title text-center mb-5">Nos Objectifs</h2>
             <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="presentation-card">
-                        <h3><i class="fas fa-theater-masks"></i> Qui sommes-nous ?</h3>
-                        <p>La commission culture de MBAO Notre Priorité est dédiée à la préservation, la promotion et la célébration de notre riche patrimoine culturel. Nous travaillons à maintenir vivantes nos traditions tout en encourageant la créativité contemporaine.</p>
-                        <p><strong>Nos objectifs :</strong></p>
-                        <ul style="color: var(--gray);"><li>✓ Organiser des festivals culturels et événements communautaires</li><li>✓ Promouvoir les arts locaux et l'artisanat traditionnel</li><li>✓ Sensibiliser à la préservation du patrimoine</li><li>✓ Créer des espaces de rencontre et d'expression artistique</li></ul>
+                    <div class="col-lg-8 mx-auto">
+                    <p style="font-size: 1.1rem; text-align: center; color: #666; margin-bottom: 30px;">
+                        La commission santé de MBAO Notre Priorité œuvre pour améliorer l'accès à la santé, 
+                        sensibiliser aux comportements sains et promouvoir le bien-être dans notre communauté.
+                    </p>
+                    <div class="activity-img hero-img" style="padding:0;">
+                        <img src="photos/santé.jpg" alt="Daara2">
+                        <div class="hero-caption">
+                            <h3>Commission Santé</h3>
+                            <p class="small">Améliorer la santé et le bien‑être de notre communauté</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="mb-5">
-            <h2 class="section-title text-center">Nos Activités</h2>
+        <!-- Activités -->
+        <section class="my-5">
+            <h2 class="section-title text-center mb-5">Nos Activités</h2>
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <div class="activity-card"><div class="activity-img" style="padding:0;"><img src="photos/daara5.jpg" alt="Daara5" style="width:100%; height:220px; object-fit:cover; display:block;"></div><div class="activity-body"><h5><i class="fas fa-music"></i> Festival Culturel Annuel</h5><div class="date"><i class="far fa-calendar"></i> Annuel</div><p>Grande célébration de notre culture avec danses, musiques traditionnelles et spectacles mettant en avant les talents locaux.</p></div></div>
-                    <div class="activity-card"><div class="activity-img" style="padding:0;"><img src="photos/denree-alimentaire.jpg" alt="Denree alimentaire" style="width:100%; height:220px; object-fit:cover; display:block;"></div><div class="activity-body"><h5><i class="fas fa-paintbrush"></i> Ateliers Créatifs</h5><div class="date"><i class="far fa-calendar"></i> Mensuel</div><p>Sessions pratiques d'apprentissage des arts traditionnels : tissage, sculpture, peinture, musique et danse.</p></div></div>
-                    <div class="activity-card"><div class="activity-img" style="padding:0;"><img src="photos/don-daara.jpg" alt="Don daara" style="width:100%; height:220px; object-fit:cover; display:block;"></div><div class="activity-body"><h5><i class="fas fa-scroll"></i> Préservation du Patrimoine</h5><div class="date"><i class="far fa-calendar"></i> En cours</div><p>Documentation et sauvegarde de nos histoires, traditions et patrimoine immatériel pour les générations futures.</p></div></div>
-                    <div class="activity-card"><div class="activity-img" style="padding:0;"><img src="photos/don-daara2.jpg" alt="Don daara2" style="width:100%; height:220px; object-fit:cover; display:block;"></div><div class="activity-body"><h5><i class="fas fa-celebration"></i> Événements Communautaires</h5><div class="date"><i class="far fa-calendar"></i> Régulier</div><p>Organisation d'événements rassembleurs : spectacles, expositions, concerts et célébrations socio-culturelles.</p></div></div>
+                    <!-- Activité 1 -->
+                    <div class="activity-card">
+                        <div class="activity-img" style="padding:0;"><img src="photos/santé_dara.jpg" alt="Daara4"></div>
+                        <div class="activity-card-body">
+                            <h5><i class="fas fa-clinic-medical"></i>GUÈSS-TOU TALIBÉS YII</h5>
+                            <p>Date: <strong>Samedi 18 mars 2023</strong></p>
+                            <p>La journée a concerné deux daaras de la ZAC de Mbao (imam Baldé et imam Malick Diouf). Elle a été marquée par des récitals du Coran, des prières, un petit-déjeuner avec les talibés, des consultations et soins gratuits avec la Croix-Rouge, des animations religieuses et une remise de dons. La journée s’est déroulée dans un esprit de communion et de solidarité, avec le soutien de plusieurs partenaires.</p>
+                        </div>
+                    </div>
+
+                    <!-- Activité 2 -->
+                    <div class="activity-card">
+                        <div class="activity-img" style="padding:0;"><img src="photos/consultation_2023.jpg" alt="Daara5"></div>
+                        <div class="activity-card-body">
+                            <h5><i class="fas fa-clinic-medical"></i>Journée de consultation gratuite</h5>
+                            <p>Date: <strong>samedi 02 Décembre 2023</strong></p>
+                            <p>Une journée de consultations médicales gratuites s’est tenue le 02 décembre 2023 à l’initiative de MBAO NOTRE PRIORITÉ, en collaboration avec MBAO Assistance Médicale et la Croix-Rouge. Des médecins généralistes et spécialistes ont participé pour faciliter l’accès aux soins des populations. L’action visait à renforcer la solidarité et l’engagement citoyen, avec des remerciements adressés aux partenaires, donateurs et membres du mouvement pour leur soutien.</p>
+                        </div>
+                    </div>
+
+                    <!-- Activité 3 -->
+                    <div class="activity-card">
+                        <div class="activity-img" style="padding:0;"><img src="photos/don-de-sang.jpg" alt="Denree alimentaire"></div>
+                        <div class="activity-card-body">
+                            <h5><i class="fas fa-clinic-medical"></i>Journée de don de sang</h5>
+                            <p>Date: <strong>Samedi 8 février 2025</strong></p>
+                            <p>L’Association MBAO NOTRE PRIORITÉ, en partenariat avec AMEX et IADEM, a organisé une journée de don de sang au poste de santé de Mbao, permettant de collecter 51 poches de sang grâce à la mobilisation des populations. Cette action humanitaire souligne l’importance de la solidarité et de l’engagement citoyen, avec des remerciements adressés aux donneurs, partenaires et membres de l’association.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="mb-5">
-            <h2 class="section-title text-center">Responsable</h2>
+        <!-- Responsable -->
+        <section class="my-5">
+            <h2 class="section-title text-center mb-5">Responsable</h2>
             <div class="row">
-                <div class="col-lg-4 mx-auto">
-                    <div class="responsible-card"><img src="photos/don-de-sang.jpg" alt="Don de sang"><h6>Président Commission Culture</h6><p>Commission Culture - MBAO</p></div>
+                <div class="col-lg-4 mx-auto text-center">
+                    <div style="background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                        <h5 style="color: var(--primary-color); font-weight: 600; margin-bottom: 5px;">Mbaye Babacar Fall</h5>
+                        <p style="color: #666; margin-bottom: 0;">Président Commission Santé</p>
+                    </div>
                 </div>
             </div>
         </section>

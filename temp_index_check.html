@@ -170,9 +170,9 @@
             object-fit: cover;
         }
 
-        /* Make images in the "Nos Domaines d'Action & Commissions" section consistent so titles align */
+        /* Make images in the "Nos Domaines d'Action & Commissions" section display without zoom/cropping */
         #activites .card-img-top {
-            height: 220px; /* fixed container height so all card titles start at same level */
+            max-height: 320px; /* allow bounded height but don't force crop */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -181,20 +181,8 @@
 
         #activites .card-img-top img {
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* fill the container and occupy full width */
-            display: block;
-        }
-
-        /* Ensure cards stretch to equal height inside the row so titles align vertically */
-        #activites .card {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        #activites .card-body {
-            flex: 0 0 auto;
+            height: auto; /* show whole image without cropping */
+            object-fit: contain;
         }
         
         .card-body {
@@ -215,38 +203,6 @@
         /* Sections */
         section {
             padding: 80px 0;
-        }
-
-        /* Video grid */
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            align-items: start;
-        }
-
-        .video-card {
-            background: white;
-            padding: 12px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-        }
-
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 */
-            height: 0;
-            overflow: hidden;
-            border-radius: 6px;
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
         }
         
         section:nth-child(even) {
@@ -492,22 +448,6 @@
             .section-title {
                 font-size: 1.5rem;
             }
-            /* Mobile: ensure activites images show fully (no crop) */
-            #activites .card-img-top {
-                height: auto;
-            }
-            #activites .card-img-top img {
-                width: 100%;
-                height: auto;
-                object-fit: contain;
-            }
-        }
-        /* Photos du bureau : remplir le carré et garder le centrage */
-        #bureau div[style] img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
         }
     </style>
     <link href="css/images.css" rel="stylesheet">
@@ -726,7 +666,7 @@
                         <!-- Président -->
                         <div style="text-align: center;">
                             <div style="width: 150px; height: 150px; margin: 0 auto 15px; border-radius: 10px; overflow:hidden;">
-                                <img src="photos/youssou_n.jpg" alt="Youssou Ndoye">
+                                <img src="photos/ndogou8.jpeg" alt="Youssou Ndoye">
                             </div>
                             <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Youssou Ndoye</h5>
                             <p style="color: #666; margin: 0; font-weight: 500;">Président</p>
@@ -735,7 +675,7 @@
                         <!-- Vice-président -->
                         <div style="text-align: center;">
                             <div style="width: 150px; height: 150px; margin: 0 auto 15px; border-radius: 10px; overflow:hidden;">
-                                <img src="photos/saliou_ndoye.jpg" alt="Saliou Ndoye">
+                                <img src="photos/ndogou2.jpg" alt="Saliou Ndoye">
                             </div>
                             <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Saliou Ndoye</h5>
                             <p style="color: #666; margin: 0; font-weight: 500;">Vice-président</p>
@@ -744,7 +684,7 @@
                         <!-- Secrétaire Général -->
                         <div style="text-align: center;">
                             <div style="width: 150px; height: 150px; margin: 0 auto 15px; border-radius: 10px; overflow:hidden;">
-                                <img src="photos/awa_cheikh.jpg" alt="Awa Cheikh Ndoye">
+                                <img src="photos/photo.jpeg" alt="Awa Cheikh Ndoye">
                             </div>
                             <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Awa Cheikh Ndoye</h5>
                             <p style="color: #666; margin: 0; font-weight: 500;">Secrétaire Général</p>
@@ -753,7 +693,7 @@
                         <!-- Trésorier -->
                         <div style="text-align: center;">
                             <div style="width: 150px; height: 150px; margin: 0 auto 15px; border-radius: 10px; overflow:hidden;">
-                                <img src="photos/mamadou_lamine.jpg" alt="Mamadou Lamine Seck">
+                                <img src="photos/ndogou5.jpg" alt="Mamadou Lamine Seck">
                             </div>
                             <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Mamadou Lamine Seck</h5>
                             <p style="color: #666; margin: 0; font-weight: 500;">Trésorier</p>
@@ -762,7 +702,7 @@
                         <!-- Commissaire aux Comptes -->
                         <div style="text-align: center;">
                             <div style="width: 150px; height: 150px; margin: 0 auto 15px; border-radius: 10px; overflow:hidden;">
-                                <img src="photos/khady_ndoye.jpg" alt="Khadija Ndoye">
+                                <img src="photos/ndogou.jpg" alt="Khadija Ndoye">
                             </div>
                             <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Khadija Ndoye</h5>
                             <p style="color: #666; margin: 0; font-weight: 500;">Commissaire aux Comptes</p>
@@ -771,7 +711,7 @@
                         <!-- Relation Extérieures -->
                         <div style="text-align: center;">
                             <div style="width: 150px; height: 150px; margin: 0 auto 15px; border-radius: 10px; overflow:hidden;">
-                                <img src="photos/makhtar.jpg" alt="Makhtar Seck">
+                                <img src="photos/panel.jpg" alt="Makhtar Seck">
                             </div>
                             <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Makhtar Seck</h5>
                             <p style="color: #666; margin: 0; font-weight: 500;">Relation Extérieures</p>
@@ -780,7 +720,7 @@
                         <!-- Communication -->
                         <div style="text-align: center;">
                             <div style="width: 150px; height: 150px; margin: 0 auto 15px; border-radius: 10px; overflow:hidden;">
-                                <img src="photos/maguette.jpg" alt="Maguette Pouye">
+                                <img src="photos/panel2.jpeg" alt="Maguette Pouye">
                             </div>
                             <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Maguette Pouye</h5>
                             <p style="color: #666; margin: 0; font-weight: 500;">Communication</p>
@@ -789,7 +729,7 @@
                         <!-- Pres. Commission Santé -->
                         <div style="text-align: center;">
                             <div style="width: 150px; height: 150px; margin: 0 auto 15px; border-radius: 10px; overflow:hidden;">
-                                <img src="photos/mbaye_fall.jpg" alt="Mbaye Babacar Fall">
+                                <img src="photos/consultation2.jpg" alt="Mbaye Babacar Fall">
                             </div>
                             <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Mbaye Babacar Fall</h5>
                             <p style="color: #666; margin: 0; font-weight: 500;">Pres. Commission Santé</p>
@@ -798,7 +738,7 @@
                         <!-- Pres. Commission Éducation -->
                         <div style="text-align: center;">
                             <div style="width: 150px; height: 150px; margin: 0 auto 15px; border-radius: 10px; overflow:hidden;">
-                                <img src="photos/samba_sarr.jpg" alt="Samba Laye Sarr">
+                                <img src="photos/daara.jpg" alt="Samba Laye Sarr">
                             </div>
                             <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Samba Laye Sarr</h5>
                             <p style="color: #666; margin: 0; font-weight: 500;">Pres. Commission Éducation</p>
@@ -807,7 +747,7 @@
                         <!-- Pres. Commission Environnement -->
                         <div style="text-align: center;">
                             <div style="width: 150px; height: 150px; margin: 0 auto 15px; border-radius: 10px; overflow:hidden;">
-                                <img src="photos/ndeye_seck.jpg" alt="Ndeye Mbogne Kane">
+                                <img src="photos/ndogou.jpg" alt="Ndeye Mbogne Kane">
                             </div>
                             <h5 style="color: var(--primary); font-weight: 600; margin-bottom: 5px;">Ndeye Mbogne Kane</h5>
                             <p style="color: #666; margin: 0; font-weight: 500;">Pres. Commission Environnement</p>
@@ -856,39 +796,25 @@
                 </div>
             </div>
         </div>
+        <div style="background: #e8f5e9; border-left: 5px solid var(--secondary); padding: 20px; border-radius: 8px; margin-top: 30px;">
+            <h5 style="color: var(--primary); margin-bottom: 10px;"><i class="fas fa-credit-card"></i> Modes de Paiement</h5>
+            <p style="margin: 0; color: #666;">💳 Paiement via <strong>Wave / Orange Money</strong><br>
+            📞 Numéro : <strong><a href="https://wa.me/221774938305" style="color: var(--secondary); text-decoration: underline;">+221 77 493 83 05</a></strong><br>
+            ✅ Après paiement, la commande est envoyée sur WhatsApp</p>
+        </div>
         <div style="text-align: center; margin-top: 30px;">
             <a href="boutique.html" class="btn btn-primary-custom" style="font-size: 1rem;">Voir la boutique complète</a>
         </div>
     </section>
     
     <!-- Appel à l'action -->
-    <!-- Nos vidéos -->
-    <section class="container my-5" id="videos">
-        <h2 class="section-title text-center mb-5">Nos vidéos</h2>
-        <div class="video-grid">
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/6cq9w8f5hIc?si=X_ujbBpu6ShKqF0M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <p style="margin-top:8px; color: #444; font-weight:600;">Titre de la vidéo 1</p>
-            </div>
-
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/-PrBeQ8sEsw?si=ntaRhvSgGA0eCg9r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <p style="margin-top:8px; color: #444; font-weight:600;">Titre de la vidéo 2</p>
-            </div>
-
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/uyiKl6bmHTY?si=hzJonBasmMekX-8z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <p style="margin-top:8px; color: #444; font-weight:600;">Titre de la vidéo 3</p>
-            </div>
+    <section style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 80px 0;">
+        <div class="container text-center">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Rejoignez le Mouvement !</h2>
+            <p class="lead" style="font-size: 1.3rem; margin-bottom: 30px;">Devenez membre et contribuez au développement durable de Mbao</p>
+            <a href="devenir-membre.html" class="btn btn-light btn-lg px-5" style="color: var(--primary); font-weight: 600;">S'inscrire maintenant</a>
         </div>
     </section>
-    
 
     <!-- Footer -->
     <footer>

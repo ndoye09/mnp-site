@@ -240,7 +240,7 @@
         <div class="form-container">
             <h2 class="form-title">Formulaire d'Adhésion</h2>
             
-            <form action="https://formspree.io/f/VOTRE_ID_ICI" method="POST">
+            <form id="form-devenir-membre" data-endpoint="https://httpbin.org/post" action="https://formspree.io/f/VOTRE_ID_ICI" method="POST">
                 <!-- Informations Personnelles -->
                 <h5 style="color: var(--primary-color); margin-top: 30px; margin-bottom: 20px; font-weight: 600;">
                     <i class="fas fa-user"></i> Informations Personnelles
@@ -275,67 +275,6 @@
                 <div class="mb-3">
                     <label for="adresse" class="form-label">Adresse / Quartier à Mbao</label>
                     <textarea class="form-control" id="adresse" name="adresse" rows="3" placeholder="Spécifiez votre localisation à Mbao"></textarea>
-                </div>
-
-                <!-- Affiliation -->
-                <h5 style="color: var(--primary-color); margin-top: 30px; margin-bottom: 20px; font-weight: 600;">
-                    <i class="fas fa-sitemap"></i> Votre Affiliation
-                </h5>
-
-                <div class="mb-3">
-                    <label for="section" class="form-label">Section ou Commission souhaitée <span class="required">*</span></label>
-                    <select class="form-select" id="section" name="section" required>
-                        <option value="">-- Sélectionnez une option --</option>
-                        <optgroup label="Sections Locales">
-                            <option value="grand-mbao">Grand Mbao</option>
-                            <option value="mbao-village">Mbao Village</option>
-                            <option value="tefess">Tefess</option>
-                        </optgroup>
-                        <optgroup label="Commissions Thématiques">
-                            <option value="commission-sante">Commission Santé Sociale</option>
-                            <option value="commission-education">Commission Pédagogique</option>
-                            <option value="commission-environnement">Commission Environnement</option>
-                            <option value="commission-admin">Commission Administrative</option>
-                        </optgroup>
-                        <optgroup label="Autres">
-                            <option value="diaspora">Diaspora (Europe, USA)</option>
-                        </optgroup>
-                    </select>
-                </div>
-
-                <!-- Motivations -->
-                <h5 style="color: var(--primary-color); margin-top: 30px; margin-bottom: 20px; font-weight: 600;">
-                    <i class="fas fa-heart"></i> Motivations
-                </h5>
-
-                <div class="mb-3">
-                    <label for="motivation" class="form-label">Pourquoi voulez-vous rejoindre MBAO ?</label>
-                    <textarea class="form-control" id="motivation" name="motivation" rows="4" placeholder="Partagez vos motivations et ce que vous espérez apporter au mouvement..."></textarea>
-                </div>
-
-                <!-- Compétences -->
-                <div class="mb-3">
-                    <label for="competences" class="form-label">Vos compétences ou domaines d'intérêt</label>
-                    <textarea class="form-control" id="competences" name="competences" rows="3" placeholder="Santé, Éducation, Environnement, Communication, Gestion..."></textarea>
-                </div>
-
-                <!-- Conditions -->
-                <h5 style="color: var(--primary-color); margin-top: 30px; margin-bottom: 20px; font-weight: 600;">
-                    <i class="fas fa-check-circle"></i> Conditions d'Adhésion
-                </h5>
-
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="conditions" name="conditions" required>
-                    <label class="form-check-label" for="conditions">
-                        J'accepte les <a href="#" style="color: var(--secondary-color); text-decoration: underline;">conditions d'adhésion</a> et je m'engage à respecter les principes du mouvement <span class="required">*</span>
-                    </label>
-                </div>
-
-                <div class="mb-4 form-check">
-                    <input type="checkbox" class="form-check-input" id="newsletter" name="newsletter">
-                    <label class="form-check-label" for="newsletter">
-                        Je souhaite recevoir les actualités et événements du mouvement
-                    </label>
                 </div>
 
                 <!-- Submit Button -->
@@ -397,6 +336,7 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/form-handler.js"></script>
 </body>
 </html>

@@ -120,78 +120,25 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
         
-        /* Activity card image: fill its image container and crop if necessary */
-        .activity-card .activity-img {
-            flex: 0 0 45%;
-            height: 40vh; /* responsive height increased */
-            min-height: 240px; /* ensure a reasonable minimum */
-            max-height: 520px; /* avoid overly tall images on very large screens */
-            overflow: hidden;
-            border-radius: 8px;
-        }
-
-        .activity-card .activity-img img {
+        .activity-card img {
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* fill the area and crop to avoid letterboxing */
+            max-height: 320px; /* uniform card image height */
+            height: auto; /* preserve aspect ratio */
+            object-fit: contain; /* do not crop */
             display: block;
-            box-shadow: 0 6px 18px rgba(2,6,23,0.06);
             border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(2,6,23,0.06);
         }
 
-        /* Ensure all activity images cover their container height */
+        /* Ensure single large images also display fully with a larger max height */
         .activity-img img {
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* cover the container height and width */
+            max-height: 520px; /* allow larger hero image but keep it bounded */
+            height: auto;
+            object-fit: contain;
             display: block;
             border-radius: 10px;
             box-shadow: 0 8px 26px rgba(2,6,23,0.06);
-        }
-
-        /* Hero image specific styles (first image) */
-        .activity-img.hero-img {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-        }
-
-        .activity-img.hero-img img {
-            max-height: 360px;
-            width: 100%;
-            height: auto;
-            object-fit: cover; /* fill the area and avoid extra blank space below */
-            display: block;
-        }
-
-        .activity-img.hero-img .hero-caption {
-            position: absolute;
-            left: 18px;
-            bottom: 18px;
-            background: linear-gradient(90deg, rgba(0,0,0,0.42), rgba(0,0,0,0.18));
-            color: #fff;
-            padding: 12px 14px;
-            border-radius: 8px;
-            max-width: 65%;
-            box-shadow: 0 6px 18px rgba(2,6,23,0.18);
-        }
-
-        .activity-img.hero-img .hero-caption h3 { margin: 0 0 6px 0; font-size: 1.15rem; font-weight: 700; }
-        .activity-img.hero-img .hero-caption p { margin: 0 0 8px 0; opacity: 0.95; }
-        .activity-img.hero-img .hero-caption .btn { font-weight: 700; }
-        .activity-img.hero-img .hero-caption .btn {
-            background: var(--accent-color);
-            color: #08203a;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 6px;
-            box-shadow: 0 6px 18px rgba(2,6,23,0.12);
-            transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
-        }
-        .activity-img.hero-img .hero-caption .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 26px rgba(2,6,23,0.18);
-            opacity: 0.98;
         }
 
         /* Layout: image left, content right on wide screens */
@@ -200,8 +147,8 @@
 
         @media (max-width: 992px) {
             .activity-card { flex-direction: column; padding: 0; }
-            .activity-card .activity-img { flex: none; width: 100%; height: auto; }
-            .activity-card .activity-img img { height: auto; object-fit: cover; max-height: 420px; }
+            .activity-card .activity-img { flex: none; width: 100%; }
+            .activity-card img { max-height: 420px; }
         }
         
         .activity-card-body {
@@ -318,18 +265,12 @@
         <section class="my-5">
             <h2 class="section-title text-center mb-5">Nos Objectifs</h2>
             <div class="row">
-                    <div class="col-lg-8 mx-auto">
+                <div class="col-lg-8 mx-auto">
                     <p style="font-size: 1.1rem; text-align: center; color: #666; margin-bottom: 30px;">
                         La commission santé de MBAO Notre Priorité œuvre pour améliorer l'accès à la santé, 
                         sensibiliser aux comportements sains et promouvoir le bien-être dans notre communauté.
                     </p>
-                    <div class="activity-img hero-img" style="padding:0;">
-                        <img src="photos/santé.jpg" alt="Daara2">
-                        <div class="hero-caption">
-                            <h3>Commission Santé</h3>
-                            <p class="small">Améliorer la santé et le bien‑être de notre communauté</p>
-                        </div>
-                    </div>
+                    <div class="activity-img" style="padding:0;"><img src="photos/santé.jpg" alt="Daara2"></div>
                 </div>
             </div>
         </section>
@@ -343,9 +284,9 @@
                     <div class="activity-card">
                         <div class="activity-img" style="padding:0;"><img src="photos/santé_dara.jpg" alt="Daara4"></div>
                         <div class="activity-card-body">
-                            <h5><i class="fas fa-clinic-medical"></i>GUÈSS-TOU TALIBÉS YII</h5>
-                            <p>Date: <strong>Samedi 18 mars 2023</strong></p>
-                            <p>La journée a concerné deux daaras de la ZAC de Mbao (imam Baldé et imam Malick Diouf). Elle a été marquée par des récitals du Coran, des prières, un petit-déjeuner avec les talibés, des consultations et soins gratuits avec la Croix-Rouge, des animations religieuses et une remise de dons. La journée s’est déroulée dans un esprit de communion et de solidarité, avec le soutien de plusieurs partenaires.</p>
+                            <h5><i class="fas fa-clinic-medical"></i> Titre de l'activité</h5>
+                            <p>Date: <strong>[Ajouter la date]</strong></p>
+                            <p>[Ajouter la description de l'activité - les objectifs, les bénéficiaires, les résultats]</p>
                         </div>
                     </div>
 
@@ -353,9 +294,9 @@
                     <div class="activity-card">
                         <div class="activity-img" style="padding:0;"><img src="photos/consultation_2023.jpg" alt="Daara5"></div>
                         <div class="activity-card-body">
-                            <h5><i class="fas fa-clinic-medical"></i>Journée de consultation gratuite</h5>
-                            <p>Date: <strong>samedi 02 Décembre 2023</strong></p>
-                            <p>Une journée de consultations médicales gratuites s’est tenue le 02 décembre 2023 à l’initiative de MBAO NOTRE PRIORITÉ, en collaboration avec MBAO Assistance Médicale et la Croix-Rouge. Des médecins généralistes et spécialistes ont participé pour faciliter l’accès aux soins des populations. L’action visait à renforcer la solidarité et l’engagement citoyen, avec des remerciements adressés aux partenaires, donateurs et membres du mouvement pour leur soutien.</p>
+                            <h5><i class="fas fa-clinic-medical"></i> Titre de l'activité</h5>
+                            <p>Date: <strong>[Ajouter la date]</strong></p>
+                            <p>[Ajouter la description de l'activité - les objectifs, les bénéficiaires, les résultats]</p>
                         </div>
                     </div>
 
@@ -363,9 +304,9 @@
                     <div class="activity-card">
                         <div class="activity-img" style="padding:0;"><img src="photos/don-de-sang.jpg" alt="Denree alimentaire"></div>
                         <div class="activity-card-body">
-                            <h5><i class="fas fa-clinic-medical"></i>Journée de don de sang</h5>
-                            <p>Date: <strong>Samedi 8 février 2025</strong></p>
-                            <p>L’Association MBAO NOTRE PRIORITÉ, en partenariat avec AMEX et IADEM, a organisé une journée de don de sang au poste de santé de Mbao, permettant de collecter 51 poches de sang grâce à la mobilisation des populations. Cette action humanitaire souligne l’importance de la solidarité et de l’engagement citoyen, avec des remerciements adressés aux donneurs, partenaires et membres de l’association.</p>
+                            <h5><i class="fas fa-clinic-medical"></i> Titre de l'activité</h5>
+                            <p>Date: <strong>[Ajouter la date]</strong></p>
+                            <p>[Ajouter la description de l'activité - les objectifs, les bénéficiaires, les résultats]</p>
                         </div>
                     </div>
                 </div>

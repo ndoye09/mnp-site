@@ -123,16 +123,12 @@
         /* Activity card image: fill its image container and crop if necessary */
         .activity-card .activity-img {
             flex: 0 0 45%;
-            height: 32vh; /* reduced height for better visual balance */
-            min-height: 200px; /* ensure a reasonable minimum */
-            max-height: 420px; /* avoid overly tall images on very large screens */
+            height: 40vh; /* responsive height increased */
+            min-height: 240px; /* ensure a reasonable minimum */
+            max-height: 520px; /* avoid overly tall images on very large screens */
             overflow: hidden;
             border-radius: 8px;
         }
-
-        /* Specific sizes for education activity images */
-        .activity-img--tall { height: auto; min-height: 0; max-height: 1200px; }
-        .activity-img--medium { height: 28vh; min-height: 180px; max-height: 360px; }
 
         .activity-card .activity-img img {
             width: 100%;
@@ -158,14 +154,36 @@
             position: relative;
             overflow: hidden;
             border-radius: 12px;
-            height: 360px; /* fixed hero height to ensure consistent display */
         }
 
         .activity-img.hero-img img {
+            max-height: 360px;
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* cover the container without distortion */
+            height: auto;
+            object-fit: cover; /* fill the area and avoid extra blank space below */
             display: block;
+        }
+
+        /* Exact sizes for education page images */
+        /* Hero: fixed display size but responsive */
+        .activity-img.hero-img img {
+            width: 1100px;
+            height: 360px;
+            max-width: 100%;
+            object-fit: contain; /* show full hero image */
+        }
+
+        /* Activity thumbnails: exact size, responsive downscaling */
+        .activity-card .activity-img img {
+            width: 700px;
+            height: 420px;
+            max-width: 100%;
+            object-fit: contain; /* show whole image without cropping */
+        }
+
+        @media (max-width: 992px) {
+            .activity-img.hero-img img { width: 100%; height: auto; }
+            .activity-card .activity-img img { width: 100%; height: auto; }
         }
 
         .activity-img.hero-img .hero-caption {
@@ -343,20 +361,21 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <div class="activity-card">
-                        <div class="activity-img activity-img--tall" style="padding:0;background:#f7f9fb;"><img src="photos/synthese.jpg?v=2" alt="Synthèse philo" style="width:100%;height:auto;display:block;max-height:900px;"></div>
+                        <div class="activity-img" style="padding:0;"><img src="photos/sybrgesen.jpg" alt="Bourses"></div>
                         <div class="activity-card-body">
-                            <h5><i class="fas fa-book-reader"></i> Synthèse philo pour les élèves de terminale</h5>
-                            <p>Date: <strong>dimanche 25 juin 2023</strong></p>
-                            <p>Sessions de synthèse, méthode et exercices ciblés pour bien préparer les épreuves de philosophie.</p>
+                            <h5><i class="fas fa-graduation-cap"></i> Synthèse de philosophie</h5>
+                            <p>Date: <strong> 25 juin 2023</strong></p>
+                            <p>L’objectif était d’offrir à tous les candidats au baccalauréat issus de la COMMUNE  DE MBAO et environs , tous les clés nécessaires pour mieux affronter l’épreuve de philosophie à l’aise.
+L’idée c’est d’avoir un impact positif dans la vie de tout un chacun , afin d’inspirer notre génération et celles à venir d’être conscient des défis à relever .</p>
                         </div>
                     </div>
 
                     <div class="activity-card">
-                        <div class="activity-img activity-img--medium" style="padding:0;"><img src="photos/panel.jpg?v=2" alt="Formation leadership" style="width:100%;height:100%;object-fit:cover;"></div>
+                        <div class="activity-img" style="padding:0;"><img src="photos/panel.jpg" alt="Formations"></div>
                         <div class="activity-card-body">
-                            <h5><i class="fas fa-chalkboard-teacher"></i> Formation en leadership et développement personnel</h5>
-                            <p>Date: <strong>19 mai 2023</strong></p>
-                            <p>Ateliers pratiques axés sur le leadership, la prise de parole en public et le développement des compétences personnelles.</p>
+                            <h5><i class="fas fa-chalkboard-teacher"></i> Panel sur le leadership et le développement personnel</h5>
+                            <p>Date: <strong>18 mai 2023</strong></p>
+                            <p>Ateliers et formations pour améliorer les compétences de parole en public et l'employabilité des jeunes.</p>
                         </div>
                     </div>
 
@@ -386,16 +405,16 @@
                 <div class="col-md-3 mb-4">
                     <h5><i class="fas fa-info-circle"></i> À propos</h5>
                     <ul>
-                        <li><a href="index.html#qui-sommes-nous">Qui sommes-nous</a></li>
-                        <li><a href="index.html#activites">Nos activités</a></li>
-                        <li><a href="index.html#activites">Nos commissions</a></li>
+                        <li><a href="#qui-sommes-nous">Qui sommes-nous</a></li>
+                        <li><a href="#activites">Nos activités</a></li>
+                        <li><a href="#activites">Nos commissions</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 mb-4">
                     <h5><i class="fas fa-link"></i> Ressources</h5>
                     <ul>
                         <li><a href="devenir-membre.html">Adhérer</a></li>
-                        <li><a href="actualites.html">Actualités</a></li>
+                        
                         <li><a href="evenements.html">Événements</a></li>
                     </ul>
                 </div>
@@ -413,8 +432,16 @@
                         <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                         <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
+                    <div class="mt-3 partners-inline">
+                        <h6 style="color:white; margin-bottom:10px;">Partenaires</h6>
+                        <div style="display:flex; gap:12px; align-items:center;">
+                            <img src="photos/amex_partenaire.jpeg" alt="AMEX" style="max-height:48px; object-fit:contain;">
+                            <img src="photos/iadem_partenaire.jpeg" alt="IADEM" style="max-height:48px; object-fit:contain;">
+                        </div>
+                    </div>
                 </div>
             </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2026 MBAO Notre Priorité. Tous droits réservés | Un mouvement pour le développement communautaire</p>
             </div>

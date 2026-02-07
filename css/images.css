@@ -18,3 +18,9 @@
 .event-header img { height:60px !important; width:auto !important; border-radius:8px !important; }
 /* Fallback small avatars */
 img.avatar-sm { width:150px !important; height:150px !important; object-fit:cover !important; display:block !important; }
+
+/* Navbar brand logo size (override inline styles) */
+.navbar-brand img {
+  height: 80px !important;
+  width: auto !important;
+}

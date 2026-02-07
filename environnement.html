@@ -120,30 +120,38 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
         
-        /* Activity card image: fill its image container and crop if necessary */
+        /* Activity card image: show whole image without cropping */
         .activity-card .activity-img {
             flex: 0 0 45%;
-            height: 40vh; /* responsive height increased */
-            min-height: 240px; /* ensure a reasonable minimum */
-            max-height: 520px; /* avoid overly tall images on very large screens */
-            overflow: hidden;
+            height: auto; /* let image define height so it's shown completely */
+            min-height: 0;
+            max-height: none;
+            overflow: visible;
             border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            padding: 0;
         }
 
         .activity-card .activity-img img {
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* fill the area and crop to avoid letterboxing */
+            height: auto; /* preserve full image, no cropping */
+            max-width: 100%;
+            object-fit: contain; /* show whole image */
+            object-position: center center;
             display: block;
             box-shadow: 0 6px 18px rgba(2,6,23,0.06);
             border-radius: 8px;
         }
 
-        /* Ensure all activity images cover their container height */
+        /* Ensure all activity images are shown completely without cropping */
         .activity-img img {
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* cover the container height and width */
+            height: auto;
+            object-fit: contain;
+            object-position: center center;
             display: block;
             border-radius: 10px;
             box-shadow: 0 8px 26px rgba(2,6,23,0.06);
@@ -339,29 +347,29 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <div class="activity-card">
-                        <div class="activity-img" style="padding:0;"><img src="photos/nettoyage.jpg" alt="Reboisement"></div>
+                        <div class="activity-img" style="padding:0;"><img src="photos/babacar_cissen.jpg" alt="Reboisement"></div>
                         <div class="activity-card-body">
-                            <h5><i class="fas fa-forest"></i>Campagnes de reboisement</h5>
-                            <p>Date: <strong>Annuel</strong></p>
-                            <p>Plantation d'arbres et actions pour lutter contre la désertification.</p>
+                            <h5><i ></i>Journée citoyenne de nettoyage à l’école El Hadj Babacar Cissé</h5>
+                            <p>Date: <strong>3 octobre 2022</strong></p>
+                            <p>Dans le cadre du programme de MBAO NOTRE PRIORITÉ, les membres de l’association ont mené une action volontaire d’assainissement et de solidarité pour offrir un cadre scolaire propre et sain à l’approche de la rentrée.</p>
                         </div>
                     </div>
 
                     <div class="activity-card">
-                        <div class="activity-img" style="padding:0;"><img src="photos/nettoyage.jpeg" alt="Nettoyage"></div>
+                        <div class="activity-img" style="padding:0;"><img src="photos/wassour_n.jpg" alt="Nettoyage"></div>
                         <div class="activity-card-body">
-                            <h5><i class="fas fa-person-hiking"></i>Nettoyages communautaires</h5>
-                            <p>Date: <strong>Mensuel</strong></p>
-                            <p>Opérations de nettoyage et sensibilisation au tri des déchets.</p>
+                            <h5><i></i>Journée citoyenne de nettoyage à l’école Mame Wassour Seck</h5>
+                            <p>Date: <strong>26 septembre 2022</strong></p>
+                            <p>le mouvement MBAO NOTRE PRIORITÉ a organisé une journée de nettoyage afin de préparer un environnement scolaire sain à l’approche de la rentrée, illustrant l’engagement d’une jeunesse consciente et responsable.</p>
                         </div>
                     </div>
 
                     <div class="activity-card">
                         <div class="activity-img" style="padding:0;"><img src="photos/nettoyage5.jpg" alt="Préservation"></div>
                         <div class="activity-card-body">
-                            <h5><i class="fas fa-droplet"></i>Préservation des ressources</h5>
-                            <p>Date: <strong>Continu</strong></p>
-                            <p>Actions pour protéger l'eau et sensibiliser à l'utilisation durable des ressources naturelles.</p>
+                            <h5><i ></i>Journée d’investissement humain et d’actions citoyennes à l’école Keur Mbaye Fall 2</h5>
+                            <p>Date: <strong>13 octobre 2025</strong></p>
+                            <p>Le mouvement MBAO NOTRE PRIORITÉ poursuit ses efforts pour offrir un cadre scolaire propre, sain et propice à une éducation de qualité. Un immense merci à tous les membres pour leur engagement, leur énergie et leur esprit d’équipe. Ensemble, faisons de Mbao un modèle de solidarité et de fierté</p>
                         </div>
                     </div>
                 </div>
@@ -389,16 +397,16 @@
                 <div class="col-md-3 mb-4">
                     <h5><i class="fas fa-info-circle"></i> À propos</h5>
                     <ul>
-                        <li><a href="index.html#qui-sommes-nous">Qui sommes-nous</a></li>
-                        <li><a href="index.html#activites">Nos activités</a></li>
-                        <li><a href="index.html#activites">Nos commissions</a></li>
+                        <li><a href="#qui-sommes-nous">Qui sommes-nous</a></li>
+                        <li><a href="#activites">Nos activités</a></li>
+                        <li><a href="#activites">Nos commissions</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 mb-4">
                     <h5><i class="fas fa-link"></i> Ressources</h5>
                     <ul>
                         <li><a href="devenir-membre.html">Adhérer</a></li>
-                        <li><a href="actualites.html">Actualités</a></li>
+                        
                         <li><a href="evenements.html">Événements</a></li>
                     </ul>
                 </div>
@@ -416,8 +424,16 @@
                         <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                         <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
+                    <div class="mt-3 partners-inline">
+                        <h6 style="color:white; margin-bottom:10px;">Partenaires</h6>
+                        <div style="display:flex; gap:12px; align-items:center;">
+                            <img src="photos/amex_partenaire.jpeg" alt="AMEX" style="max-height:48px; object-fit:contain;">
+                            <img src="photos/iadem_partenaire.jpeg" alt="IADEM" style="max-height:48px; object-fit:contain;">
+                        </div>
+                    </div>
                 </div>
             </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2026 MBAO Notre Priorité. Tous droits réservés | Un mouvement pour le développement communautaire</p>
             </div>

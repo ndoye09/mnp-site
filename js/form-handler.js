@@ -123,6 +123,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const handleSubmit = async (e) => {
     if (e && e.preventDefault) e.preventDefault();
 
+    // Prevent submission when required fields are empty
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
     const endpoint = (form.dataset.endpoint || form.action || '').trim();
 
     // collect form data into an object

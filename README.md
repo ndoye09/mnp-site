@@ -109,7 +109,7 @@ Le site utilise les images suivantes du repo original:
 
 - [GitHub Original](https://github.com/ndoyeac06/mbao-notre-priorite)
 - [WhatsApp MBAO](https://wa.me/221774938305)
- - [Site en ligne (Vercel)](https://mnp-site-ochre.vercel.app)
+ - [Site en ligne (Vercel)](https://mnp-site-ochre.vercel.app) — déployé le 2026-02-20 (inclut les dernières modifications)
 
 ## 📝 Notes
 
